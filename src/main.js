@@ -1,7 +1,13 @@
+let muteCounter = 0;
 const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    console.log(`${mutation.type} - ${mutation.target.outerHTML} - ${mutation.oldValue}`);
-  });
+  // mutations.forEach((mutation) => {
+  //   console.log(`${mutation.type} - ${mutation.target.outerHTML} - ${mutation.oldValue}`);
+  // });
+  if (muteCounter % 5 !== 0) {
+    return;
+  }
+  console.debug('mute!');
+  muteCounter++;
   try {
     [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
       .filter((e) => e.innerText.includes('BuzzFeed') || e.innerText.includes('ハフポスト'))
