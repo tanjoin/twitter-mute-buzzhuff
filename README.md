@@ -7,7 +7,8 @@ Twitter がやたらおすすめしてくる Buzzfeed と ハフィントンポ�
 Twitterが優遇するクソメディアはどんどん非表示にする予定。
 
 ## CHANGELOG
+### Ver. 0.0.2
+- ページ切り替え時に動作するよう一旦変更
 ### Ver. 0.0.1
 - add Buzzfeed
 - add ハフィントンポスト
-
