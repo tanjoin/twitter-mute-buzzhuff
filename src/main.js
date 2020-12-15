@@ -7,7 +7,6 @@ const observer = new MutationObserver((mutations) => {
   if (muteCounter % 3 !== 0) {
     return;
   }
-  console.debug(`mute = ${muteCounter}`);
   try {
     [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
       .filter((e) => e.innerText.includes('BuzzFeed') || e.innerText.includes('ハフポスト'))
