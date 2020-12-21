@@ -6,7 +6,12 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 
 ## 使い方
 
-ストアに出したらBANされそうなのでしません。
+[Chromeウェブストア](https://chrome.google.com/webstore/detail/twitter-mute-buzzfuff/hkmcdjeodpkmkicddjflnhkanfdlggfm?hl=ja&authuser=0)で限定公開してみました。
+
+利用中にエラーがあった場合は、Issueからお知らせください。
+
+~~ストアに出したらBANされそうなのでしません。~~
+
 その代わり以下の方法で利用できます。
 
 1. このリポジトリをダウンロード
