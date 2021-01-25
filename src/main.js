@@ -7,7 +7,6 @@ let twitterMute = {
   toyokeizai: false  
 };
 const filterFunc = (e) => {
-  console.log(JSON.stringify(twitterMute));
   var result = false;
   if (twitterMute.buzzfeed) {
     result = e.innerText.includes('BuzzFeed') || result;
@@ -57,7 +56,5 @@ chrome.storage.sync.get({
   twitterMute.bunshun = items.bunshun;      
   twitterMute.fnn = items.fnn;      
   twitterMute.toyokeizai = items.toyokeizai;     
-  console.log(JSON.stringify(twitterMute)); 
 });
 
-console.log(JSON.stringify(twitterMute)); 
