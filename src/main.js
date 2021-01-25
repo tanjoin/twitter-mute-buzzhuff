@@ -12,6 +12,9 @@ const filterFunc = (e) => {
   if (twitterMute.huffpost) {
     result = e.innerText.includes('ハフポスト') || result;
   }
+  if (twitterMute.bunshun) {
+    result = e.innerText.includes('文春') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
