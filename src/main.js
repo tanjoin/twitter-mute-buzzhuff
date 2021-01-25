@@ -4,7 +4,8 @@ let twitterMute = {
   huffpost: true,
   bunshun: false,
   fnn: false,
-  toyokeizai: false  
+  toyokeizai: false,
+  asahicom: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -22,6 +23,9 @@ const filterFunc = (e) => {
   }
   if (twitterMute.toyokeizai) {
     result = e.innerText.includes('東洋経済') || result;
+  }
+  if (twitterMute.asahicom) {
+    result = e.innerText.includes('朝日新聞') || result;
   }
   return result;
 }
@@ -49,12 +53,14 @@ chrome.storage.sync.get({
   huffpost: true,
   bunshun: false,
   fnn: false,
-  toyokeizai: false
+  toyokeizai: false,
+  asahicom: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
   twitterMute.bunshun = items.bunshun;      
   twitterMute.fnn = items.fnn;      
   twitterMute.toyokeizai = items.toyokeizai;     
+  twitterMute.asahicom = items.asahicom;
 });
 
