@@ -2,7 +2,9 @@ let muteCounter = 0;
 let twitterMute = {
   buzzfeed: true,
   huffpost: true,
-  bunshun: false  
+  bunshun: false,
+  fnn: false,
+  toyokeizai: false  
 };
 const filterFunc = (e) => {
   var result = false;
@@ -14,6 +16,12 @@ const filterFunc = (e) => {
   }
   if (twitterMute.bunshun) {
     result = e.innerText.includes('文春') || result;
+  }
+  if (twitterMute.bunshun) {
+    result = e.innerText.includes('FNN') || result;
+  }
+  if (twitterMute.bunshun) {
+    result = e.innerText.includes('東洋経済') || result;
   }
   return result;
 }
