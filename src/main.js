@@ -1,18 +1,30 @@
 let muteCounter = 0;
+let twitterMute = {
+  buzzfeed: true,
+  huffpost: true,
+  bunshun: false  
+};
+const filterFunc = (e) => {
+  var result = false;
+  if (twitterMute.buzzfeed) {
+    result = e.innerText.includes('BuzzFeed') || result;
+  }
+  if (twitterMute.huffpost) {
+    result = e.innerText.includes('ハフポスト') || result;
+  }
+  return result;
+}
 const observer = new MutationObserver((mutations) => {
-  // mutations.forEach((mutation) => {
-  //   console.log(`${mutation.type} - ${mutation.target.outerHTML} - ${mutation.oldValue}`);
-  // });
   muteCounter++;
   if (muteCounter % 3 !== 0) {
     return;
   }
   try {
     [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
-      .filter((e) => e.innerText.includes('BuzzFeed') || e.innerText.includes('ハフポスト'))
+      .filter(filterFunc)
       .forEach((e) => e.style.display = 'none');
     [...document.querySelectorAll('div[aria-label="タイムライン: 話題を検索"] > div > div')]
-      .filter((e) => e.innerText.includes('BuzzFeed') || e.innerText.includes('ハフポスト'))
+      .filter(filterFunc)
       .forEach((e) => e.style.display = 'none');
   } catch (e) {
     console.error(e);
@@ -20,3 +32,13 @@ const observer = new MutationObserver((mutations) => {
 });
 const config = { attributes: false, childList: true, characterData: false, subtree: true };
 observer.observe(document.body, config);
+
+chrome.storage.sync.get({
+  buzzfeed: true,
+  huffpost: true,
+  bunshun: false
+}, (items) => {
+  twitterMute.buzzfeed = items.buzzfeed;
+  twitterMute.huffpost = items.huffpost;
+  twitterMute.bunshun = items.bunshun;      
+});

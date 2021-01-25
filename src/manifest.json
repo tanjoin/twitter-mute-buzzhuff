@@ -8,10 +8,14 @@
     "48": "img/48.png",
     "16": "img/16.png"
   },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [ "https://twitter.com/*" ],
       "js": [ "main.js" ]
     }
-  ]
+  ],
+  "options_page": "options.html"
 }
