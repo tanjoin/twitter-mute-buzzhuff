@@ -7,6 +7,7 @@ let twitterMute = {
   toyokeizai: false  
 };
 const filterFunc = (e) => {
+  console.log(JSON.stringify(twitterMute));
   var result = false;
   if (twitterMute.buzzfeed) {
     result = e.innerText.includes('BuzzFeed') || result;
@@ -17,10 +18,10 @@ const filterFunc = (e) => {
   if (twitterMute.bunshun) {
     result = e.innerText.includes('文春') || result;
   }
-  if (twitterMute.bunshun) {
+  if (twitterMute.fnn) {
     result = e.innerText.includes('FNN') || result;
   }
-  if (twitterMute.bunshun) {
+  if (twitterMute.toyokeizai) {
     result = e.innerText.includes('東洋経済') || result;
   }
   return result;
@@ -47,9 +48,16 @@ observer.observe(document.body, config);
 chrome.storage.sync.get({
   buzzfeed: true,
   huffpost: true,
-  bunshun: false
+  bunshun: false,
+  fnn: false,
+  toyokeizai: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
   twitterMute.bunshun = items.bunshun;      
+  twitterMute.fnn = items.fnn;      
+  twitterMute.toyokeizai = items.toyokeizai;     
+  console.log(JSON.stringify(twitterMute)); 
 });
+
+console.log(JSON.stringify(twitterMute)); 
