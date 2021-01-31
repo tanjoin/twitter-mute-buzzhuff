@@ -8,7 +8,8 @@ let twitterMute = {
   asahicom: false,
   numberweb: false,
   jijimedical: false,
-  trend_seiji: false
+  trend_seiji: false,
+  trend_kpop: false
 };
 const filterFunc = (e) => {
   var result = false;
