@@ -20,6 +20,11 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 4. 完了
 
 ## CHANGELOG
+### Ver. 0.1.3
+- add Number編集部
+- add 時事メディカル
+- add 政治 · トレンド
+- add K-POP · トレンド
 ### Ver. 0.1.2
 - add 朝日新聞 option
 ### Ver. 0.1.1

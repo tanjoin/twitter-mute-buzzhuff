@@ -5,7 +5,10 @@ let twitterMute = {
   bunshun: false,
   fnn: false,
   toyokeizai: false,
-  asahicom: false
+  asahicom: false,
+  numberweb: false,
+  jijimedical: false,
+  trend_seiji: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -26,6 +29,18 @@ const filterFunc = (e) => {
   }
   if (twitterMute.asahicom) {
     result = e.innerText.includes('朝日新聞') || result;
+  }
+  if (twitterMute.numberweb) {
+    result = e.innerText.includes('Number編集部') || result;
+  }
+  if (twitterMute.jijimedical) {
+    result = e.innerText.includes('時事メディカル') || result;
+  }
+  if (twitterMute.trend_seiji) {
+    result = e.innerText.includes('政治 · トレンド') || result;
+  }
+  if (twitterMute.trend_kpop) {
+    result = e.innerText.includes('K-POP · トレンド') || result;
   }
   return result;
 }
@@ -54,7 +69,11 @@ chrome.storage.sync.get({
   bunshun: false,
   fnn: false,
   toyokeizai: false,
-  asahicom: false
+  asahicom: false,
+  numberweb: false,
+  jijimedical: false,
+  trend_seiji: false,
+  trend_kpop: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -62,5 +81,9 @@ chrome.storage.sync.get({
   twitterMute.fnn = items.fnn;      
   twitterMute.toyokeizai = items.toyokeizai;     
   twitterMute.asahicom = items.asahicom;
+  twitterMute.numberweb = items.numberweb;
+  twitterMute.jijimedical = items.jijimedical;
+  twitterMute.trend_seiji = items.trend_seiji;
+  twitterMute.trend_kpop = items.trend_kpop;
 });
 
