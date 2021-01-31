@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "twitter-mute-buzzfuff",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "鬱陶しいメディアを目に入らなくする",
   "icons": {
     "128": "img/128.png",
