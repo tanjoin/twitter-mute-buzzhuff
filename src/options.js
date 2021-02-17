@@ -9,7 +9,12 @@ function saveOptions() {
     numberweb: document.getElementById('numberweb').checked,
     jijimedical: document.getElementById('jijimedical').checked,
     trend_seiji: document.getElementById('trend_seiji').checked,
-    trend_kpop: document.getElementById('trend_kpop').checked
+    trend_kpop: document.getElementById('trend_kpop').checked,
+    jijicom: document.getElementById('jijicom').checked,
+    news24ntv: document.getElementById('news24ntv').checked,
+    hst_tvasahi: document.getElementById('hst_tvasahi').checked,
+    crea_web: document.getElementById('crea_web').checked,
+    shin_R25: document.getElementById('shin_R25').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -30,7 +35,12 @@ function restoreOptions() {
     numberweb: false,
     jijimedical: false,
     trend_seiji: false,
-    trend_kpop: false
+    trend_kpop: false,
+    jijicom: false,
+    news24ntv: false,
+    hst_tvasahi: false,
+    crea_web: false,
+    shin_R25: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -42,6 +52,11 @@ function restoreOptions() {
     document.getElementById('jijimedical').checked = items.jijimedical;
     document.getElementById('trend_seiji').checked = items.trend_seiji;
     document.getElementById('trend_kpop').checked = items.trend_kpop;
+    document.getElementById('jijicom').checked = items.jijicom;
+    document.getElementById('news24ntv').checked = items.news24ntv;
+    document.getElementById('hst_tvasahi').checked = items.hst_tvasahi;
+    document.getElementById('crea_web').checked = items.crea_web;
+    document.getElementById('shin_R25').checked = items.shin_R25;
     const status = document.getElementById('status');
   });
 }

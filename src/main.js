@@ -9,7 +9,12 @@ let twitterMute = {
   numberweb: false,
   jijimedical: false,
   trend_seiji: false,
-  trend_kpop: false
+  trend_kpop: false,
+  jijicom: false,
+  news24ntv: false,
+  hst_tvasahi: false,
+  crea_web: false,
+  shin_R25: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -43,6 +48,21 @@ const filterFunc = (e) => {
   if (twitterMute.trend_kpop) {
     result = e.innerText.includes('K-POP · トレンド') || result;
   }
+  if (twitterMute.jijicom) {
+    result = e.innerText.includes('時事ドットコム') || result;
+  }
+  if (twitterMute.news24ntv) {
+    result = e.innerText.includes('日テレNEWS') || result;
+  }
+  if (twitterMute.hst_tvasahi) {
+    result = e.innerText.includes('報道ステーション') || result;
+  }
+  if (twitterMute.crea_web) {
+    result = e.innerText.includes('CREA') || result;
+  }
+  if (twitterMute.shin_R25) {
+    result = e.innerText.includes('新R25編集部') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -74,7 +94,12 @@ chrome.storage.sync.get({
   numberweb: false,
   jijimedical: false,
   trend_seiji: false,
-  trend_kpop: false
+  trend_kpop: false,
+  jijicom: false,
+  news24ntv: false,
+  hst_tvasahi: false,
+  crea_web: false,
+  shin_R25: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -86,5 +111,10 @@ chrome.storage.sync.get({
   twitterMute.jijimedical = items.jijimedical;
   twitterMute.trend_seiji = items.trend_seiji;
   twitterMute.trend_kpop = items.trend_kpop;
+  twitterMute.jijicom = items.jijicom;
+  twitterMute.news24ntv = items.news24ntv;
+  twitterMute.hst_tvasahi = items.hst_tvasahi;
+  twitterMute.crea_web = items.crea_web;
+  twitterMute.shin_R25 = items.shin_R25;
 });
 
