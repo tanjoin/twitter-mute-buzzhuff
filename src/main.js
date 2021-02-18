@@ -14,7 +14,8 @@ let twitterMute = {
   news24ntv: false,
   hst_tvasahi: false,
   crea_web: false,
-  shin_R25: false
+  shin_R25: false,
+  word_BTS: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -63,6 +64,9 @@ const filterFunc = (e) => {
   if (twitterMute.shin_R25) {
     result = e.innerText.includes('新R25編集部') || result;
   }
+  if (twitterMute.word_BTS) {
+    result = e.innerText.includes('BTS') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -99,7 +103,8 @@ chrome.storage.sync.get({
   news24ntv: false,
   hst_tvasahi: false,
   crea_web: false,
-  shin_R25: false
+  shin_R25: false,
+  word_BTS: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -116,5 +121,6 @@ chrome.storage.sync.get({
   twitterMute.hst_tvasahi = items.hst_tvasahi;
   twitterMute.crea_web = items.crea_web;
   twitterMute.shin_R25 = items.shin_R25;
+  twitterMute.word_BTS = items.word_BTS;
 });
 

@@ -14,7 +14,8 @@ function saveOptions() {
     news24ntv: document.getElementById('news24ntv').checked,
     hst_tvasahi: document.getElementById('hst_tvasahi').checked,
     crea_web: document.getElementById('crea_web').checked,
-    shin_R25: document.getElementById('shin_R25').checked
+    shin_R25: document.getElementById('shin_R25').checked,
+    word_BTS: document.getElementById('word_BTS').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -40,7 +41,8 @@ function restoreOptions() {
     news24ntv: false,
     hst_tvasahi: false,
     crea_web: false,
-    shin_R25: false
+    shin_R25: false,
+    word_BTS: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -57,6 +59,7 @@ function restoreOptions() {
     document.getElementById('hst_tvasahi').checked = items.hst_tvasahi;
     document.getElementById('crea_web').checked = items.crea_web;
     document.getElementById('shin_R25').checked = items.shin_R25;
+    document.getElementById('word_BTS').checked = items.word_BTS;
     const status = document.getElementById('status');
   });
 }
