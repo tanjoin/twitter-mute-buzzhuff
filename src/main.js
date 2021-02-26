@@ -95,7 +95,7 @@ const filterFunc = (e) => {
 }
 const observer = new MutationObserver((mutations) => {
   muteCounter++;
-  if (muteCounter % 3 !== 0) {
+  if (muteCounter === 0 || muteCounter % 3 !== 0) {
     return;
   }
   try {
