@@ -15,7 +15,8 @@ let twitterMute = {
   hst_tvasahi: false,
   crea_web: false,
   shin_R25: false,
-  word_BTS: false
+  word_BTS: false,
+  gendai_biz: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -67,6 +68,9 @@ const filterFunc = (e) => {
   if (twitterMute.word_BTS) {
     result = e.innerText.includes('BTS') || result;
   }
+  if (twitterMute.gendai_biz) {
+    result = e.innerText.includes('現代ビジネス') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -104,7 +108,8 @@ chrome.storage.sync.get({
   hst_tvasahi: false,
   crea_web: false,
   shin_R25: false,
-  word_BTS: false
+  word_BTS: false,
+  gendai_biz: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -122,5 +127,6 @@ chrome.storage.sync.get({
   twitterMute.crea_web = items.crea_web;
   twitterMute.shin_R25 = items.shin_R25;
   twitterMute.word_BTS = items.word_BTS;
+  twitterMute.gendai_biz = items.gendai_biz;
 });
 
