@@ -18,7 +18,8 @@ function saveOptions() {
     word_BTS: document.getElementById('word_BTS').checked,
     gendai_biz: document.getElementById('gendai_biz').checked,
     gekisaka: document.getElementById('gekisaka').checked,
-    frau_tw: document.getElementById('frau_tw').checked
+    frau_tw: document.getElementById('frau_tw').checked,
+    tastyjapan: document.getElementById('tastyjapan').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -48,7 +49,8 @@ function restoreOptions() {
     word_BTS: false,
     gendai_biz: false,
     gekisaka: false,
-    frau_tw: false
+    frau_tw: false,
+    tastyjapan: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -69,6 +71,7 @@ function restoreOptions() {
     document.getElementById('gendai_biz').checked = items.gendai_biz;
     document.getElementById('gekisaka').checked = items.gekisaka;
     document.getElementById('frau_tw').checked = items.frau_tw;
+    document.getElementById('tastyjapan').checked = items.tastyjapan;
     const status = document.getElementById('status');
   });
 }

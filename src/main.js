@@ -18,7 +18,8 @@ let twitterMute = {
   word_BTS: false,
   gendai_biz: false,
   gekisaka: false,
-  frau_tw: false
+  frau_tw: false,
+  tastyjapan: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -79,6 +80,9 @@ const filterFunc = (e) => {
   if (twitterMute.frau_tw) {
     result = e.innerText.includes('FRaU') || result;
   }
+  if (twitterMute.tastyjapan) {
+    result = e.innerText.innerText('Tasty Japan') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -119,7 +123,8 @@ chrome.storage.sync.get({
   word_BTS: false,
   gendai_biz: false,
   gekisaka: false,
-  frau_tw: false
+  frau_tw: false,
+  tastyjapan: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -140,5 +145,6 @@ chrome.storage.sync.get({
   twitterMute.gendai_biz = items.gendai_biz;
   twitterMute.gekisaka = items.gekisaka;
   twitterMute.frau_tw = items.frau_tw;
+  twitterMute.tastyjapan = items.tastyjapan;
 });
 
