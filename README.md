@@ -21,7 +21,6 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 
 ## CHANGELOG
 ### Ver. 0.1.7
-### Ver. 0.1.6
 - キーワードミュートをテスト その②
 - add Tasty Japan
 - add FRaU
