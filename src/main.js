@@ -81,7 +81,7 @@ const filterFunc = (e) => {
     result = e.innerText.includes('FRaU') || result;
   }
   if (twitterMute.tastyjapan) {
-    result = e.innerText.innerText('Tasty Japan') || result;
+    result = e.innerText.includes('Tasty Japan') || result;
   }
   return result;
 }
