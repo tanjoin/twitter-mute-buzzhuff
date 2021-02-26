@@ -20,9 +20,10 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 4. 完了
 
 ## CHANGELOG
-### Ver. 0.1.7
-- SankeiBiz
-- NHKニュース
+### Ver. 0.2.0
+- しっかりミュート機能を追加
+- add SankeiBiz
+- add NHKニュース
 - キーワードミュートをテスト その②
 - add Tasty Japan
 - add FRaU

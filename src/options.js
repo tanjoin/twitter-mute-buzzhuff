@@ -23,7 +23,8 @@ function saveOptions() {
     word_korea: document.getElementById('word_korea').checked,
     word_china: document.getElementById('word_china').checked,
     nhk_news: document.getElementById('nhk_news').checked,
-    sankeibiz: document.getElementById('sankeibiz').checked
+    sankeibiz: document.getElementById('sankeibiz').checked,
+    mute_level_hard: document.getElementById('mute_level_hard').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -58,7 +59,8 @@ function restoreOptions() {
     word_korea: false,
     word_china: false,
     nhk_news: false,
-    sankeibiz: false
+    sankeibiz: false,
+    mute_level_hard: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -84,9 +86,20 @@ function restoreOptions() {
     document.getElementById('word_china').checked = items.word_china;
     document.getElementById('nhk_news').checked = items.nhk_news;
     document.getElementById('sankeibiz').checked = items.sankeibiz;
+    document.getElementById('mute_level_hard').checked = items.mute_level_hard;
     const status = document.getElementById('status');
   });
 }
 
+function addAllCheck() {
+  [...document.querySelectorAll('input[type="checkbox"]')].forEach((e) => e.checked = true);
+}
+
+function removeAllCheck() {
+  [...document.querySelectorAll('input[type="checkbox"]')].forEach((e) => e.checked = false);
+}
+
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click', saveOptions);
+document.getElementById('add_all_check').addEventListener('click', addAllCheck);
+document.getElementById('remove_all_check').addEventListener('click', removeAllCheck);
