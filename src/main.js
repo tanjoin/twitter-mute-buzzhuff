@@ -94,7 +94,7 @@ const filterFunc = (e) => {
     result = e.innerText.includes('中国') || result;
   }
   if (twitterMute.nhk_news) {
-    result = e.innerText.includes('NHKニュース') || result;
+    result = e.innerText.includes('NHKニュース') || e.innerText.includes('NHK NEWS') || result;
   }
   if (twitterMute.sankeibiz) {
     result = e.innerText.includes('SankeiBiz') || result;
