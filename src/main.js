@@ -19,7 +19,9 @@ let twitterMute = {
   gendai_biz: false,
   gekisaka: false,
   frau_tw: false,
-  tastyjapan: false
+  tastyjapan: false,
+  word_korea: false,
+  word_china: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -83,6 +85,12 @@ const filterFunc = (e) => {
   if (twitterMute.tastyjapan) {
     result = e.innerText.includes('Tasty Japan') || result;
   }
+  if (twitterMute.word_korea) {
+    result = e.innerText.includes('韓国') || result;
+  }
+  if (twitterMute.word_china) {
+    result = e.innerText.includes('中国') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -124,7 +132,9 @@ chrome.storage.sync.get({
   gendai_biz: false,
   gekisaka: false,
   frau_tw: false,
-  tastyjapan: false
+  tastyjapan: false,
+  word_korea: false,
+  word_china: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -146,5 +156,7 @@ chrome.storage.sync.get({
   twitterMute.gekisaka = items.gekisaka;
   twitterMute.frau_tw = items.frau_tw;
   twitterMute.tastyjapan = items.tastyjapan;
+  twitterMute.word_korea = items.word_korea;
+  twitterMute.word_china = items.word_china;
 });
 
