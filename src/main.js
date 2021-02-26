@@ -17,7 +17,8 @@ let twitterMute = {
   shin_R25: false,
   word_BTS: false,
   gendai_biz: false,
-  gekisaka: false
+  gekisaka: false,
+  frau_tw: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -75,6 +76,9 @@ const filterFunc = (e) => {
   if (twitterMute.gekisaka) {
     result = e.innerText.includes('ゲキサカ') || result;
   }
+  if (twitterMute.frau_tw) {
+    result = e.innerText.includes('FRaU') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -114,7 +118,8 @@ chrome.storage.sync.get({
   shin_R25: false,
   word_BTS: false,
   gendai_biz: false,
-  gekisaka: false
+  gekisaka: false,
+  frau_tw: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -134,5 +139,6 @@ chrome.storage.sync.get({
   twitterMute.word_BTS = items.word_BTS;
   twitterMute.gendai_biz = items.gendai_biz;
   twitterMute.gekisaka = items.gekisaka;
+  twitterMute.frau_tw = items.frau_tw;
 });
 
