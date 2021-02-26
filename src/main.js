@@ -23,7 +23,7 @@ let twitterMute = {
 const filterFunc = (e) => {
   var result = false;
   if (twitterMute.buzzfeed) {
-    result = e.innerText.includes('BuzzFeed') || result;
+    result = e.innerText.includes('BuzzFeed') || e.innerText.includes('バズフィード') || result;
   }
   if (twitterMute.huffpost) {
     result = e.innerText.includes('ハフポスト') || result;
