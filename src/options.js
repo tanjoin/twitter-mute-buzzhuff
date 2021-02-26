@@ -16,7 +16,8 @@ function saveOptions() {
     crea_web: document.getElementById('crea_web').checked,
     shin_R25: document.getElementById('shin_R25').checked,
     word_BTS: document.getElementById('word_BTS').checked,
-    gendai_biz: document.getElementById('gendai_biz').checked
+    gendai_biz: document.getElementById('gendai_biz').checked,
+    gekisaka: document.getElementById('gekisaka').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -44,7 +45,8 @@ function restoreOptions() {
     crea_web: false,
     shin_R25: false,
     word_BTS: false,
-    gendai_biz: false
+    gendai_biz: false,
+    gekisaka: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -63,6 +65,7 @@ function restoreOptions() {
     document.getElementById('shin_R25').checked = items.shin_R25;
     document.getElementById('word_BTS').checked = items.word_BTS;
     document.getElementById('gendai_biz').checked = items.gendai_biz;
+    document.getElementById('gekisaka').checked = items.gekisaka;
     const status = document.getElementById('status');
   });
 }
