@@ -22,7 +22,8 @@ let twitterMute = {
   tastyjapan: false,
   word_korea: false,
   word_china: false,
-  nhk_news: false
+  nhk_news: false,
+  sankeibiz: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -95,6 +96,9 @@ const filterFunc = (e) => {
   if (twitterMute.nhk_news) {
     result = e.innerText.includes('NHKニュース') || result;
   }
+  if (twitterMute.sankeibiz) {
+    result = e.innerText.includes('SankeiBiz') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -139,7 +143,8 @@ chrome.storage.sync.get({
   tastyjapan: false,
   word_korea: false,
   word_china: false,
-  nhk_news: false
+  nhk_news: false,
+  sankeibiz: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -164,5 +169,6 @@ chrome.storage.sync.get({
   twitterMute.word_korea = items.word_korea;
   twitterMute.word_china = items.word_china;
   twitterMute.nhk_news = items.nhk_news;
+  twitterMute.sankeibiz = items.sankeibiz;
 });
 

@@ -22,7 +22,8 @@ function saveOptions() {
     tastyjapan: document.getElementById('tastyjapan').checked,
     word_korea: document.getElementById('word_korea').checked,
     word_china: document.getElementById('word_china').checked,
-    nhk_news: document.getElementById('nhk_news').checked
+    nhk_news: document.getElementById('nhk_news').checked,
+    sankeibiz: document.getElementById('sankeibiz').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -56,7 +57,8 @@ function restoreOptions() {
     tastyjapan: false,
     word_korea: false,
     word_china: false,
-    nhk_news: false
+    nhk_news: false,
+    sankeibiz: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -81,6 +83,7 @@ function restoreOptions() {
     document.getElementById('word_korea').checked = items.word_korea;
     document.getElementById('word_china').checked = items.word_china;
     document.getElementById('nhk_news').checked = items.nhk_news;
+    document.getElementById('sankeibiz').checked = items.sankeibiz;
     const status = document.getElementById('status');
   });
 }

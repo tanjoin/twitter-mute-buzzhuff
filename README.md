@@ -21,6 +21,7 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 
 ## CHANGELOG
 ### Ver. 0.1.7
+- SankeiBiz
 - NHKニュース
 - キーワードミュートをテスト その②
 - add Tasty Japan
