@@ -120,7 +120,8 @@ const observer = new MutationObserver((mutations) => {
       .filter(filterFunc)
       .forEach((e) => e.style.display = 'none');
     if (twitterMute.auto_scroll_by_1) {
-      window.scrollBy(1, 1);
+      window.scrollBy(0, 1);
+      window.scrollBy(0, -1);
     }
   } catch (e) {
     console.error(e);
@@ -135,7 +136,8 @@ const observer = new MutationObserver((mutations) => {
           .filter(filterFunc)
           .forEach((e) => e.style.display = 'none');
         if (twitterMute.auto_scroll_by_1) {
-          window.scrollBy(1, 1);
+          window.scrollBy(0, 1);
+          window.scrollBy(0, -1);
         }
       } catch (e) {
         console.error(e);
