@@ -24,7 +24,8 @@ let twitterMute = {
   word_china: false,
   nhk_news: false,
   sankeibiz: false,
-  mute_level_hard: false
+  mute_level_hard: false,
+  word_birthday: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -100,6 +101,9 @@ const filterFunc = (e) => {
   if (twitterMute.sankeibiz) {
     result = e.innerText.includes('SankeiBiz') || result;
   }
+  if (twitterMute.word_birthday) {
+    result = e.innerText.includes('誕生日') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -160,7 +164,8 @@ chrome.storage.sync.get({
   word_china: false,
   nhk_news: false,
   sankeibiz: false,
-  mute_level_hard: false
+  mute_level_hard: false,
+  word_birthday: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -187,5 +192,6 @@ chrome.storage.sync.get({
   twitterMute.nhk_news = items.nhk_news;
   twitterMute.sankeibiz = items.sankeibiz;
   twitterMute.mute_level_hard = items.mute_level_hard;
+  twitterMute.word_birthday = items.word_birthday;
 });
 

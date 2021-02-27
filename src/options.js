@@ -24,7 +24,8 @@ function saveOptions() {
     word_china: document.getElementById('word_china').checked,
     nhk_news: document.getElementById('nhk_news').checked,
     sankeibiz: document.getElementById('sankeibiz').checked,
-    mute_level_hard: document.getElementById('mute_level_hard').checked
+    mute_level_hard: document.getElementById('mute_level_hard').checked,
+    word_birthday: document.getElementById('word_birthday').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -60,7 +61,8 @@ function restoreOptions() {
     word_china: false,
     nhk_news: false,
     sankeibiz: false,
-    mute_level_hard: false
+    mute_level_hard: false,
+    word_birthday: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -87,6 +89,7 @@ function restoreOptions() {
     document.getElementById('nhk_news').checked = items.nhk_news;
     document.getElementById('sankeibiz').checked = items.sankeibiz;
     document.getElementById('mute_level_hard').checked = items.mute_level_hard;
+    document.getElementById('word_birthday').checked = items.word_birthday;
     const status = document.getElementById('status');
   });
 }
