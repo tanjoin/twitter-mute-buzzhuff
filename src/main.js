@@ -25,7 +25,8 @@ let twitterMute = {
   nhk_news: false,
   sankeibiz: false,
   mute_level_hard: false,
-  word_birthday: false
+  word_birthday: false,
+  auto_scroll_by_1: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -118,6 +119,9 @@ const observer = new MutationObserver((mutations) => {
     [...document.querySelectorAll('div[aria-label="タイムライン: 話題を検索"] > div > div')]
       .filter(filterFunc)
       .forEach((e) => e.style.display = 'none');
+    if (twitterMute.auto_scroll_by_1) {
+      window.scrollBy(1, 1);
+    }
   } catch (e) {
     console.error(e);
   }
@@ -130,6 +134,9 @@ const observer = new MutationObserver((mutations) => {
         [...document.querySelectorAll('div[aria-label="タイムライン: 話題を検索"] > div > div')]
           .filter(filterFunc)
           .forEach((e) => e.style.display = 'none');
+        if (twitterMute.auto_scroll_by_1) {
+          window.scrollBy(1, 1);
+        }
       } catch (e) {
         console.error(e);
       }
@@ -165,7 +172,8 @@ chrome.storage.sync.get({
   nhk_news: false,
   sankeibiz: false,
   mute_level_hard: false,
-  word_birthday: false
+  word_birthday: false,
+  auto_scroll_by_1: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -193,5 +201,6 @@ chrome.storage.sync.get({
   twitterMute.sankeibiz = items.sankeibiz;
   twitterMute.mute_level_hard = items.mute_level_hard;
   twitterMute.word_birthday = items.word_birthday;
+  twitterMute.auto_scroll_by_1 = items.auto_scroll_by_1;
 });
 
