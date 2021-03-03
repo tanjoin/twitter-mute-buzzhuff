@@ -26,7 +26,8 @@ let twitterMute = {
   sankeibiz: false,
   mute_level_hard: false,
   word_birthday: false,
-  auto_scroll_by_1: false
+  auto_scroll_by_1: false,
+  GINZA_magazine: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -105,6 +106,9 @@ const filterFunc = (e) => {
   if (twitterMute.word_birthday) {
     result = e.innerText.includes('誕生日') || result;
   }
+  if (twitterMute.GINZA_magazine) {
+    result = e.innerText.includes('GINZA') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -175,7 +179,8 @@ chrome.storage.sync.get({
   sankeibiz: false,
   mute_level_hard: false,
   word_birthday: false,
-  auto_scroll_by_1: false
+  auto_scroll_by_1: false,
+  GINZA_magazine: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -204,5 +209,6 @@ chrome.storage.sync.get({
   twitterMute.mute_level_hard = items.mute_level_hard;
   twitterMute.word_birthday = items.word_birthday;
   twitterMute.auto_scroll_by_1 = items.auto_scroll_by_1;
+  twitterMute.GINZA_magazine = items.GINZA_magazine;
 });
 
