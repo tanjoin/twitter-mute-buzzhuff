@@ -28,7 +28,8 @@ let twitterMute = {
   word_birthday: false,
   auto_scroll_by_1: false,
   GINZA_magazine: false,
-  BIJapan: false
+  BIJapan: false,
+  mamadaystv: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -113,6 +114,9 @@ const filterFunc = (e) => {
   if (twitterMute.BIJapan) {
     result = e.innerText.includes('Business Insider Japan') || result;
   }
+  if (twitterMute.mamadaystv) {
+    result = e.innerText.includes('MAMADAYS') || e.innerText.includes('ママデイズ') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -185,7 +189,8 @@ chrome.storage.sync.get({
   word_birthday: false,
   auto_scroll_by_1: false,
   GINZA_magazine: false,
-  BIJapan: false
+  BIJapan: false,
+  mamadaystv: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -216,5 +221,6 @@ chrome.storage.sync.get({
   twitterMute.auto_scroll_by_1 = items.auto_scroll_by_1;
   twitterMute.GINZA_magazine = items.GINZA_magazine;
   twitterMute.BIJapan = items.BIJapan;
+  twitterMute.mamadaystv = items.mamadaystv;
 });
 

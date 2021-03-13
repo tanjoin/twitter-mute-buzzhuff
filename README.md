@@ -21,6 +21,7 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 
 ## CHANGELOG
 ### Ver. 0.2.5
+- add MAMADAYS
 - add Business Insider Japan
 ### Ver. 0.2.4
 - add GINZA

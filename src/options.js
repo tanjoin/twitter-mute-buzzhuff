@@ -28,7 +28,8 @@ function saveOptions() {
     word_birthday: document.getElementById('word_birthday').checked,
     auto_scroll_by_1: document.getElementById('auto_scroll_by_1').checked,
     GINZA_magazine: document.getElementById('GINZA_magazine').checked,
-    BIJapan: document.getElementById('BIJapan').checked
+    BIJapan: document.getElementById('BIJapan').checked,
+    mamadaystv: document.getElementById('mamadaystv').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -68,7 +69,8 @@ function restoreOptions() {
     word_birthday: false,
     auto_scroll_by_1: false,
     GINZA_magazine: false,
-    BIJapan: false
+    BIJapan: false,
+    mamadaystv: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -99,6 +101,7 @@ function restoreOptions() {
     document.getElementById('auto_scroll_by_1').checked = items.auto_scroll_by_1;
     document.getElementById('GINZA_magazine').checked = items.GINZA_magazine;
     document.getElementById('BIJapan').checked = items.BIJapan;
+    document.getElementById('mamadaystv').checked = items.mamadaystv;
   });
 }
 
