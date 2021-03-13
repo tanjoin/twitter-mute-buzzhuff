@@ -21,8 +21,10 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 
 ## CHANGELOG
 ### Ver. 0.2.5
+- add 日本アカデミー賞協会
 - add MAMADAYS
 - add Business Insider Japan
+- add news zero
 ### Ver. 0.2.4
 - add GINZA
 ### Ver. 0.2.3

@@ -29,7 +29,9 @@ function saveOptions() {
     auto_scroll_by_1: document.getElementById('auto_scroll_by_1').checked,
     GINZA_magazine: document.getElementById('GINZA_magazine').checked,
     BIJapan: document.getElementById('BIJapan').checked,
-    mamadaystv: document.getElementById('mamadaystv').checked
+    mamadaystv: document.getElementById('mamadaystv').checked,
+    ntvnewszero: document.getElementById('ntvnewszero').checked,
+    japanacademy: document.getElementById('japanacademy').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -70,7 +72,9 @@ function restoreOptions() {
     auto_scroll_by_1: false,
     GINZA_magazine: false,
     BIJapan: false,
-    mamadaystv: false
+    mamadaystv: false,
+    ntvnewszero: false,
+    japanacademy: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -102,6 +106,8 @@ function restoreOptions() {
     document.getElementById('GINZA_magazine').checked = items.GINZA_magazine;
     document.getElementById('BIJapan').checked = items.BIJapan;
     document.getElementById('mamadaystv').checked = items.mamadaystv;
+    document.getElementById('ntvnewszero').checked = items.ntvnewszero;
+    document.getElementById('japanacademy').checked = items.japanacademy;
   });
 }
 

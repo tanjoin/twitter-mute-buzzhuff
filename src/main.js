@@ -29,7 +29,9 @@ let twitterMute = {
   auto_scroll_by_1: false,
   GINZA_magazine: false,
   BIJapan: false,
-  mamadaystv: false
+  mamadaystv: false,
+  ntvnewszero: false,
+  japanacademy: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -117,11 +119,17 @@ const filterFunc = (e) => {
   if (twitterMute.mamadaystv) {
     result = e.innerText.includes('MAMADAYS') || e.innerText.includes('ママデイズ') || result;
   }
+  if (twitterMute.ntvnewszero) {
+    result = e.innerText.includes('news zero') || result;
+  }
+  if (twitterMute.japanacademy) {
+    result = e.innerText.includes('日本アカデミー賞協会') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
   muteCounter++;
-  if (muteCounter % 3 !== 0) {
+  if (muteCounter % 10 !== 0) {
     return;
   }
   try {
@@ -190,7 +198,9 @@ chrome.storage.sync.get({
   auto_scroll_by_1: false,
   GINZA_magazine: false,
   BIJapan: false,
-  mamadaystv: false
+  mamadaystv: false,
+  ntvnewszero: false,
+  japanacademy: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -222,5 +232,7 @@ chrome.storage.sync.get({
   twitterMute.GINZA_magazine = items.GINZA_magazine;
   twitterMute.BIJapan = items.BIJapan;
   twitterMute.mamadaystv = items.mamadaystv;
+  twitterMute.ntvnewszero = items.ntvnewszero;
+  twitterMute.japanacademy = items.japanacademy;
 });
 
