@@ -34,7 +34,8 @@ let twitterMute = {
   japanacademy: false,
   ld_blogos: false,
   modelpress: false,
-  oricon: false
+  oricon: false,
+  trend_covid19: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -137,6 +138,9 @@ const filterFunc = (e) => {
   if (twitterMute.oricon) {
     result = e.innerText.includes('ORICON NEWS') || result;
   }
+  if (twitterMute.trend_covid19) {
+    result = e.innerText.includes('COVID-19') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -215,7 +219,8 @@ chrome.storage.sync.get({
   japanacademy: false,
   ld_blogos: false,
   modelpress: false,
-  oricon: false
+  oricon: false,
+  trend_covid19: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -252,5 +257,6 @@ chrome.storage.sync.get({
   twitterMute.ld_blogos = items.ld_blogos;
   twitterMute.modelpress = items.modelpress;
   twitterMute.oricon = items.oricon;
+  twitterMute.trend_covid19 = items.trend_covid19;
 });
 

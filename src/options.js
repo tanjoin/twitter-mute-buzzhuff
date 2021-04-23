@@ -34,7 +34,8 @@ function saveOptions() {
     japanacademy: document.getElementById('japanacademy').checked,
     ld_blogos: document.getElementById('ld_blogos').checked,
     modelpress: document.getElementById('modelpress').checked,
-    oricon: document.getElementById('oricon').checked
+    oricon: document.getElementById('oricon').checked,
+    trend_covid19: document.getElementById('trend_covid19').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -80,7 +81,8 @@ function restoreOptions() {
     japanacademy: false,
     ld_blogos: false,
     modelpress: false,
-    oricon: false
+    oricon: false,
+    trend_covid19: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -117,6 +119,7 @@ function restoreOptions() {
     document.getElementById('ld_blogos').checked = items.ld_blogos;
     document.getElementById('modelpress').checked = items.modelpress;
     document.getElementById('oricon').checked = items.oricon;
+    document.getElementById('trend_covid19').checked = items.trend_covid19;
   });
 }
 
