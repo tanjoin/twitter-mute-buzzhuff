@@ -20,6 +20,10 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 4. 完了
 
 ## CHANGELOG
+### Ver. 0.2.6
+- add BLOGOS
+- add モデルプレス
+- add ORICON NEWS
 ### Ver. 0.2.5
 - add 日本アカデミー賞協会
 - add MAMADAYS

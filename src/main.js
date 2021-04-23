@@ -31,7 +31,10 @@ let twitterMute = {
   BIJapan: false,
   mamadaystv: false,
   ntvnewszero: false,
-  japanacademy: false
+  japanacademy: false,
+  ld_blogos: false,
+  modelpress: false,
+  oricon: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -125,6 +128,15 @@ const filterFunc = (e) => {
   if (twitterMute.japanacademy) {
     result = e.innerText.includes('日本アカデミー賞協会') || result;
   }
+  if (twitterMute.ld_blogos) {
+    result = e.innerText.includes('BLOGOS') || result;
+  }
+  if (twitterMute.modelpress) {
+    result = e.innerText.includes('モデルプレス') || result;
+  }
+  if (twitterMute.oricon) {
+    result = e.innerText.includes('ORICON NEWS') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -200,7 +212,10 @@ chrome.storage.sync.get({
   BIJapan: false,
   mamadaystv: false,
   ntvnewszero: false,
-  japanacademy: false
+  japanacademy: false,
+  ld_blogos: false,
+  modelpress: false,
+  oricon: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -234,5 +249,8 @@ chrome.storage.sync.get({
   twitterMute.mamadaystv = items.mamadaystv;
   twitterMute.ntvnewszero = items.ntvnewszero;
   twitterMute.japanacademy = items.japanacademy;
+  twitterMute.ld_blogos = items.ld_blogos;
+  twitterMute.modelpress = items.modelpress;
+  twitterMute.oricon = items.oricon;
 });
 

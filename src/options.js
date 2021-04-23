@@ -31,7 +31,10 @@ function saveOptions() {
     BIJapan: document.getElementById('BIJapan').checked,
     mamadaystv: document.getElementById('mamadaystv').checked,
     ntvnewszero: document.getElementById('ntvnewszero').checked,
-    japanacademy: document.getElementById('japanacademy').checked
+    japanacademy: document.getElementById('japanacademy').checked,
+    ld_blogos: document.getElementById('ld_blogos').checked,
+    modelpress: document.getElementById('modelpress').checked,
+    oricon: document.getElementById('oricon').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -74,7 +77,10 @@ function restoreOptions() {
     BIJapan: false,
     mamadaystv: false,
     ntvnewszero: false,
-    japanacademy: false
+    japanacademy: false,
+    ld_blogos: false,
+    modelpress: false,
+    oricon: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -108,6 +114,9 @@ function restoreOptions() {
     document.getElementById('mamadaystv').checked = items.mamadaystv;
     document.getElementById('ntvnewszero').checked = items.ntvnewszero;
     document.getElementById('japanacademy').checked = items.japanacademy;
+    document.getElementById('ld_blogos').checked = items.ld_blogos;
+    document.getElementById('modelpress').checked = items.modelpress;
+    document.getElementById('oricon').checked = items.oricon;
   });
 }
 
