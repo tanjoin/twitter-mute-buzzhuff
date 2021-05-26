@@ -35,7 +35,8 @@ let twitterMute = {
   ld_blogos: false,
   modelpress: false,
   oricon: false,
-  trend_covid19: false
+  trend_covid19: false,
+  news_mynavi_jp: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -141,6 +142,9 @@ const filterFunc = (e) => {
   if (twitterMute.trend_covid19) {
     result = e.innerText.includes('COVID-19') || result;
   }
+  if (twitterMute.news_mynavi_jp) {
+    result = e.innerText.includes('マイナビニュース') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -220,7 +224,8 @@ chrome.storage.sync.get({
   ld_blogos: false,
   modelpress: false,
   oricon: false,
-  trend_covid19: false
+  trend_covid19: false,
+  news_mynavi_jp: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -258,5 +263,6 @@ chrome.storage.sync.get({
   twitterMute.modelpress = items.modelpress;
   twitterMute.oricon = items.oricon;
   twitterMute.trend_covid19 = items.trend_covid19;
+  twitterMute.news_mynavi_jp = items.news_mynavi_jp;
 });
 
