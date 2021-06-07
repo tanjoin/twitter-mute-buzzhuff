@@ -37,7 +37,8 @@ function saveOptions() {
     oricon: document.getElementById('oricon').checked,
     trend_covid19: document.getElementById('trend_covid19').checked,
     news_mynavi_jp: document.getElementById('news_mynavi_jp').checked,
-    mimollet2015: document.getElementById('mimollet2015').checked
+    mimollet2015: document.getElementById('mimollet2015').checked,
+    bizble_asahi: document.getElementById('bizble_asahi').checked
   }, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -86,7 +87,8 @@ function restoreOptions() {
     oricon: false,
     trend_covid19: false,
     news_mynavi_jp: false,
-    mimollet2015: false
+    mimollet2015: false,
+    bizble_asahi: false
   }, (items) => {
     document.getElementById('buzzfeed').checked = items.buzzfeed;
     document.getElementById('huffpost').checked = items.huffpost;
@@ -126,6 +128,7 @@ function restoreOptions() {
     document.getElementById('trend_covid19').checked = items.trend_covid19;
     document.getElementById('news_mynavi_jp').checked = items.news_mynavi_jp;
     document.getElementById('mimollet2015').checked = items.mimollet2015;
+    document.getElementById('bizble_asahi').checked = items.bizble_asahi;
   });
 }
 
