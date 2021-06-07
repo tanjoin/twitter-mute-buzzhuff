@@ -173,6 +173,16 @@ const observer = new MutationObserver((mutations) => {
   } catch (e) {
     console.error(e);
   }
+  if (twitterMute.mode_overseas) {
+    [...document.querySelectorAll('section[aria-labelledby="accessible-list-1"] > div > div > div')]
+      .filter(filterFunc)
+      .forEach((e) => e.style.display = 'none');
+    // TODO: 話題を検索
+    if (twitterMute.auto_scroll_by_1) {
+      window.scrollBy(0, 1);
+      window.scrollBy(0, -1);
+    }
+  }
   if (twitterMute.mute_level_hard) {
     setTimeout(() => {
       try {
