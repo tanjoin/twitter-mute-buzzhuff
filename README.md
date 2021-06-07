@@ -20,6 +20,8 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 4. 完了
 
 ## CHANGELOG
+### Ver. 0.2.9
+- add mi-mollet/ミモレ
 ### Ver. 0.2.8
 - add マイナビニュース
 ### Ver. 0.2.7
