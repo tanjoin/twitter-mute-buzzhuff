@@ -20,6 +20,8 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 4. 完了
 
 ## CHANGELOG
+### Ver. 0.2.11
+- checkboxのバグ修正 by @umezaki1212
 ### Ver. 0.2.10
 - add bizble（ビズブル）
 ### Ver. 0.2.9
