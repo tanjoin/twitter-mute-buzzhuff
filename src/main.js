@@ -37,7 +37,8 @@ let twitterMute = {
   oricon: false,
   trend_covid19: false,
   news_mynavi_jp: false,
-  bizble_asahi: false
+  bizble_asahi: false,
+  cosmopolitanjp: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -152,6 +153,9 @@ const filterFunc = (e) => {
   if (twitterMute.bizble_asahi) {
     result = e.innerText.includes('bizble') || e.innerText.includes('ビズブル') || result;
   }
+  if (twitterMute.cosmopolitanjp) {
+    result = e.innerText.includes('Cosmopolitan') || e.innerText.includes('コスモポリタン') || result;
+  }
   return result;
 }
 const observer = new MutationObserver((mutations) => {
@@ -234,7 +238,8 @@ chrome.storage.sync.get({
   trend_covid19: false,
   news_mynavi_jp: false,
   mimollet2015: false,
-  bizble_asahi: false
+  bizble_asahi: false,
+  cosmopolitanjp: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -275,5 +280,6 @@ chrome.storage.sync.get({
   twitterMute.news_mynavi_jp = items.news_mynavi_jp;
   twitterMute.mimollet2015 = items.mimollet2015;
   twitterMute.bizble_asahi = items.bizble_asahi;
+  twitterMute.cosmopolitanjp = items.cosmopolitanjp;
 });
 
