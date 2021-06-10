@@ -1,5 +1,23 @@
 const MUTE_LIST = [
   {
+    "id": "itm_nlab",
+    "default_value": false,
+    "name": "ねとらぼ",
+    "section": 1
+  },
+  {
+    "id": "ABEMATIMES",
+    "default_value": false,
+    "name": "ABEMA TIMES",
+    "section": 1
+  },
+  {
+    "id": "kyodo_official",
+    "default_value": false,
+    "name": "共同通信公式",
+    "section": 1
+  },
+  {
     "id" : "Newsweek_JAPAN",
     "default_value": false,
     "name" : "ニューズウィーク日本版",

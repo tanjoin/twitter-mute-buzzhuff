@@ -43,7 +43,10 @@ let twitterMute = {
   word_BTS: false,
   word_birthday: false,
   word_china: false,
-  word_korea: false
+  word_korea: false,
+  kyodo_official: false,
+  ABEMATIMES: false,
+  itm_nlab: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -172,6 +175,15 @@ const filterFunc = (e) => {
   }
   if (twitterMute.Newsweek_JAPAN) {
     result = e.innerText.includes('ニューズウィーク') || result;
+  }
+  if (twitterMute.kyodo_official) {
+    result = e.innerText.includes('共同通信') || result;
+  }
+  if (twitterMute.ABEMATIMES) {
+    result = e.innerText.includes('ABEMA TIMES') || result;
+  }
+  if (twitterMute.itm_nlab) {
+    result = e.innerText.includes('ねとらぼ') || result;
   }
   return result;
 }
