@@ -62,7 +62,7 @@ const filterFunc = (e) => {
     result = e.innerText.includes('東洋経済') || result;
   }
   if (twitterMute.asahicom) {
-    result = e.innerText.includes('朝日新聞') || result;
+    result = e.innerText.includes('朝日新聞') || e.innerText.includes('AREA') || result;
   }
   if (twitterMute.numberweb) {
     result = e.innerText.includes('Number編集部') || result;
