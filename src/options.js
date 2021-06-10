@@ -1,5 +1,11 @@
 const MUTE_LIST = [
   {
+    "id": "Kstyle_news",
+    "default_value": false,
+    "name": "Kstyle",
+    "section": 1
+  },
+  {
     "id": "cosmopolitanjp",
     "default_value": false,
     "name": "Cosmopolitan／コスモポリタン",

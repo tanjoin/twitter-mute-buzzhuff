@@ -38,7 +38,8 @@ let twitterMute = {
   trend_covid19: false,
   news_mynavi_jp: false,
   bizble_asahi: false,
-  cosmopolitanjp: false
+  cosmopolitanjp: false,
+  Kstyle_news: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -155,6 +156,9 @@ const filterFunc = (e) => {
   }
   if (twitterMute.cosmopolitanjp) {
     result = e.innerText.includes('Cosmopolitan') || e.innerText.includes('コスモポリタン') || result;
+  }
+  if (twitterMute.Kstyle_news) {
+    result = e.innerText.includes('Kstyle') || result;
   }
   return result;
 }
