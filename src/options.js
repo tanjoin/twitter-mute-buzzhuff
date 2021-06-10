@@ -365,7 +365,15 @@ function saveOptions() {
     }
     return result;
   }, { mute_list: [] });
-  console.log(syncData);
+
+  let freeword = document.getElementById('freeword_area').value;
+  if (freeword && freeword.length > 0) {
+    syncData.freeword = freeword.split('\n');
+    syncData.mute_list = syncData.mute_list.concat(syncData.freeword);
+  } else {
+    syncData.freeword = [];
+  }
+
   chrome.storage.sync.set(syncData, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
@@ -382,14 +390,19 @@ function restoreOptions() {
   var defaultValues = MUTE_LIST.reduce((result, current) => {
     result[current.id] = current.default_value;
     return result;
-  }, {});
-  chrome.storage.sync.get(defaultValues, (items) => {
+  }, { freeword: [] });
+  chrome.storage.sync.get(defaultValues, (data) => {
     MUTE_LIST.forEach((current) => {
       let checkbox = document.getElementById(current.id);
       if (checkbox) {
-        checkbox.checked = items[current.id];
+        checkbox.checked = data[current.id];
       }
     });
+    
+    let freeword = document.getElementById('freeword_area');
+    if (freeword) {
+      freeword.value = data.freeword.join('\n');
+    }
   });
 }
 
