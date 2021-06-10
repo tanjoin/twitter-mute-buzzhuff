@@ -1,5 +1,11 @@
 const MUTE_LIST = [
   {
+    "id" : "Newsweek_JAPAN",
+    "default_value": false,
+    "name" : "ニューズウィーク日本版",
+    "section": 1
+  },
+  {
     "id": "WomanExcite",
     "default_value": false,
     "name": "ウーマンエキサイト編集部",

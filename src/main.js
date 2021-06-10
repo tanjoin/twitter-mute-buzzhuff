@@ -41,7 +41,8 @@ let twitterMute = {
   cosmopolitanjp: false,
   Kstyle_news: false,
   iVoCE: false,
-  WomanExcite: false
+  WomanExcite: false,
+  Newsweek_JAPAN: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -167,6 +168,9 @@ const filterFunc = (e) => {
   }
   if (twitterMute.WomanExcite) {
     result = e.innerText.includes('ウーマンエキサイト編集部') || result;
+  }
+  if (twitterMute.Newsweek_JAPAN) {
+    result = e.innerText.includes('ニューズウィーク') || result;
   }
   return result;
 }
