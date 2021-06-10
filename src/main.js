@@ -40,7 +40,8 @@ let twitterMute = {
   bizble_asahi: false,
   cosmopolitanjp: false,
   Kstyle_news: false,
-  iVoCE: false
+  iVoCE: false,
+  WomanExcite: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -163,6 +164,9 @@ const filterFunc = (e) => {
   }
   if (twitterMute.iVoCE) {
     result = e.innerText.includes('VOCE') || e.innerText.includes('ヴォーチェ') || result;
+  }
+  if (twitterMute.WomanExcite) {
+    result = e.innerText.includes('ウーマンエキサイト編集部') || result;
   }
   return result;
 }

@@ -1,5 +1,11 @@
 const MUTE_LIST = [
   {
+    "id": "WomanExcite",
+    "default_value": false,
+    "name": "ウーマンエキサイト編集部",
+    "section": 1
+  },
+  {
     "id": "iVoCE",
     "default_value": false,
     "name" : "iVoCE",
