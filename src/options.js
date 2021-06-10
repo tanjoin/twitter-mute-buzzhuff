@@ -1,243 +1,243 @@
 const MUTE_LIST = [
-  { 
-    id: "buzzfeed",
-    default_value: true,
-    name: "BuzzFeed",
-    section: 1
+  {
+    "id": "cosmopolitanjp",
+    "default_value": false,
+    "name": "Cosmopolitan／コスモポリタン",
+    "section": 1
   },
   {
-    id:  "huffpost",
-    default_value: true,
-    name: "ハフポスト",
-    section: 1
+    "id": "bizble_asahi",
+    "default_value": false,
+    "name": "bizble（ビズブル）",
+    "section": 1
   },
   {
-    id: "bunshun",
-    default_value: false,
-    name: "文春",
-    section: 1
+    "id": "mimollet2015",
+    "default_value": false,
+    "name": "mi-mollet/ミモレ",
+    "section": 1
   },
   {
-    id: "fnn",
-    default_value: false,
-    name: "FNN",
-    section: 1
+    "id": "news_mynavi_jp",
+    "default_value": false,
+    "name": "マイナビニュース",
+    "section": 1
   },
   {
-    id: "toyokeizai",
-    default_value: false,
-    name: "東洋経済",
-    section: 1
+    "id": "trend_covid19",
+    "default_value": false,
+    "name": "COVID-19",
+    "section": 2
   },
   {
-    id: "asahicom",
-    default_value: false,
-    name: "朝日新聞",
-    section: 1
+    "id": "oricon",
+    "default_value": false,
+    "name": "ORICON NEWS（オリコンニュース）",
+    "section": 1
   },
   {
-    id: "numberweb",
-    default_value: false,
-    name: "Number編集部",
-    section: 1
+    "id": "modelpress",
+    "default_value": false,
+    "name": "モデルプレス",
+    "section": 1
   },
   {
-    id: "jijimedical",
-    default_value: false,
-    name: "時事メディカル",
-    section: 1
+    "id": "ld_blogos",
+    "default_value": false,
+    "name": "BLOGOS",
+    "section": 1
   },
   {
-    id: "trend_seiji",
-    default_value: false,
-    name: "政治",
-    section: 2
+    "id": "japanacademy",
+    "default_value": false,
+    "name": "日本アカデミー賞協会",
+    "section": 1
   },
   {
-    id: "trend_kpop",
-    default_value: false,
-    name: "K-POP",
-    section: 2
+    "id": "ntvnewszero",
+    "default_value": false,
+    "name": "news zero",
+    "section": 1
   },
   {
-    id: "jijicom",
-    default_value: false,
-    name: "時事ドットコム（時事通信ニュース）",
-    section: 1
+    "id": "mamadaystv",
+    "default_value": false,
+    "name": "MAMADAYS｜ママデイズ",
+    "section": 1
   },
   {
-    id: "news24ntv",
-    default_value: false,
-    name: "日テレNEWS / 日本テレビのニュース・速報",
-    section: 1
+    "id": "BIJapan",
+    "default_value": false,
+    "name": "Business Insider Japan",
+    "section": 1
   },
   {
-    id: "hst_tvasahi",
-    default_value: false,
-    name: "報道ステーション＋土日ステ",
-    section: 1
+    "id": "GINZA_magazine",
+    "default_value": false,
+    "name": "GINZA",
+    "section": 1
   },
   {
-    id: "crea_web",
-    default_value: false,
-    name: "CREA",
-    section: 1
+    "id": "auto_scroll_by_1",
+    "default_value": false,
+    "name": "",
+    "section": 4
   },
   {
-    id: "shin_R25",
-    default_value: false,
-    name: "新R25編集部",
-    section: 1
+    "id": "word_birthday",
+    "default_value": false,
+    "name": "誕生日",
+    "section": 3
   },
   {
-    id: "word_BTS",
-    default_value: false,
-    name: "BTS",
-    section: 3
+    "id": "mute_level_hard",
+    "default_value": false,
+    "name": "",
+    "section": 4
   },
   {
-    id: "gendai_biz",
-    default_value: false,
-    name: "現代ビジネス",
-    section: 1
+    "id": "sankeibiz",
+    "default_value": false,
+    "name": "SankeiBiz",
+    "section": 1
   },
   {
-    id: "gekisaka",
-    default_value: false,
-    name: "ゲキサカ",
-    section: 1
+    "id": "nhk_news",
+    "default_value": false,
+    "name": "NHKニュース",
+    "section": 1
   },
   {
-    id: "frau_tw",
-    default_value: false,
-    name: "FRaU（フラウ）",
-    section: 1
+    "id": "word_china",
+    "default_value": false,
+    "name": "中国",
+    "section": 3
   },
   {
-    id: "tastyjapan",
-    default_value: false,
-    name: "Tasty Japan",
-    section: 1
+    "id": "word_korea",
+    "default_value": false,
+    "name": "韓国",
+    "section": 3
   },
   {
-    id: "word_korea",
-    default_value: false,
-    name: "韓国",
-    section: 3
+    "id": "tastyjapan",
+    "default_value": false,
+    "name": "Tasty Japan",
+    "section": 1
   },
   {
-    id: "word_china",
-    default_value: false,
-    name: "中国",
-    section: 3
+    "id": "frau_tw",
+    "default_value": false,
+    "name": "FRaU（フラウ）",
+    "section": 1
   },
   {
-    id: "nhk_news",
-    default_value: false,
-    name: "NHKニュース",
-    section: 1
+    "id": "gekisaka",
+    "default_value": false,
+    "name": "ゲキサカ",
+    "section": 1
   },
   {
-    id: "sankeibiz",
-    default_value: false,
-    name: "SankeiBiz",
-    section: 1
+    "id": "gendai_biz",
+    "default_value": false,
+    "name": "現代ビジネス",
+    "section": 1
   },
   {
-    id: "mute_level_hard",
-    default_value: false,
-    name: "",
-    section: 4
+    "id": "word_BTS",
+    "default_value": false,
+    "name": "BTS",
+    "section": 3
   },
   {
-    id: "word_birthday",
-    default_value: false,
-    name: "誕生日",
-    section: 3
+    "id": "shin_R25",
+    "default_value": false,
+    "name": "新R25編集部",
+    "section": 1
   },
   {
-    id: "auto_scroll_by_1",
-    default_value: false,
-    name: "",
-    section: 4
+    "id": "crea_web",
+    "default_value": false,
+    "name": "CREA",
+    "section": 1
   },
   {
-    id: "GINZA_magazine",
-    default_value: false,
-    name: "GINZA",
-    section: 1
+    "id": "hst_tvasahi",
+    "default_value": false,
+    "name": "報道ステーション＋土日ステ",
+    "section": 1
   },
   {
-    id: "BIJapan",
-    default_value: false,
-    name: "Business Insider Japan",
-    section: 1
+    "id": "news24ntv",
+    "default_value": false,
+    "name": "日テレNEWS / 日本テレビのニュース・速報",
+    "section": 1
   },
   {
-    id: "mamadaystv",
-    default_value: false,
-    name: "MAMADAYS｜ママデイズ",
-    section: 1
+    "id": "jijicom",
+    "default_value": false,
+    "name": "時事ドットコム（時事通信ニュース）",
+    "section": 1
   },
   {
-    id: "ntvnewszero",
-    default_value: false,
-    name: "news zero",
-    section: 1
+    "id": "trend_kpop",
+    "default_value": false,
+    "name": "K-POP",
+    "section": 2
   },
   {
-    id: "japanacademy",
-    default_value: false,
-    name: "日本アカデミー賞協会",
-    section: 1
+    "id": "trend_seiji",
+    "default_value": false,
+    "name": "政治",
+    "section": 2
   },
   {
-    id: "ld_blogos",
-    default_value: false,
-    name: "BLOGOS",
-    section: 1
+    "id": "jijimedical",
+    "default_value": false,
+    "name": "時事メディカル",
+    "section": 1
   },
   {
-    id: "modelpress",
-    default_value: false,
-    name: "モデルプレス",
-    section: 1
+    "id": "numberweb",
+    "default_value": false,
+    "name": "Number編集部",
+    "section": 1
   },
   {
-    id: "oricon",
-    default_value: false,
-    name: "ORICON NEWS（オリコンニュース）",
-    section: 1
+    "id": "asahicom",
+    "default_value": false,
+    "name": "朝日新聞",
+    "section": 1
   },
   {
-    id: "trend_covid19",
-    default_value: false,
-    name: "COVID-19",
-    section: 2
+    "id": "toyokeizai",
+    "default_value": false,
+    "name": "東洋経済",
+    "section": 1
   },
   {
-    id: "news_mynavi_jp",
-    default_value: false,
-    name: "マイナビニュース",
-    section: 1
+    "id": "fnn",
+    "default_value": false,
+    "name": "FNN",
+    "section": 1
   },
   {
-    id: "mimollet2015",
-    default_value: false,
-    name: "mi-mollet/ミモレ",
-    section: 1
+    "id": "bunshun",
+    "default_value": false,
+    "name": "文春",
+    "section": 1
   },
   {
-    id: "bizble_asahi",
-    default_value: false,
-    name: "bizble（ビズブル）",
-    section: 1
+    "id": "huffpost",
+    "default_value": true,
+    "name": "ハフポスト",
+    "section": 1
   },
   {
-    id: "cosmopolitanjp",
-    default_value: false,
-    name: "Cosmopolitan／コスモポリタン",
-    section: 1
+    "id": "buzzfeed",
+    "default_value": true,
+    "name": "BuzzFeed",
+    "section": 1
   }
 ];
 
