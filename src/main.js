@@ -39,7 +39,8 @@ let twitterMute = {
   news_mynavi_jp: false,
   bizble_asahi: false,
   cosmopolitanjp: false,
-  Kstyle_news: false
+  Kstyle_news: false,
+  iVoCE: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -159,6 +160,9 @@ const filterFunc = (e) => {
   }
   if (twitterMute.Kstyle_news) {
     result = e.innerText.includes('Kstyle') || result;
+  }
+  if (twitterMute.iVoCE) {
+    result = e.innerText.includes('VOCE') || e.innerText.includes('ヴォーチェ') || result;
   }
   return result;
 }

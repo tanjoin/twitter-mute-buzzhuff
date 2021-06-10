@@ -1,5 +1,11 @@
 const MUTE_LIST = [
   {
+    "id": "iVoCE",
+    "default_value": false,
+    "name" : "iVoCE",
+    "section": 1
+  },
+  {
     "id": "Kstyle_news",
     "default_value": false,
     "name": "Kstyle",
