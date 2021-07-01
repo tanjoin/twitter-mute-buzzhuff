@@ -28,7 +28,7 @@ const observer = new MutationObserver((mutations) => {
   } catch (e) {
     console.error(e);
   }
-  if (twitterMute.mode_overseas) {
+  if (settings.mode_overseas) {
     try {
       [...document.querySelectorAll('section[aria-labelledby|="accessible-list"] > div > div > div[class]')]
         .filter(filterFunc)
@@ -36,7 +36,7 @@ const observer = new MutationObserver((mutations) => {
       [...document.querySelectorAll('div > div:nth-child(2) > div > div > section[aria-labelledby^="accessible-list"] > div > div > div')]
         .filter(filterFunc)
         .forEach((e) => e.style.display = 'none');
-      if (twitterMute.auto_scroll_by_1) {
+      if (settings.auto_scroll_by_1) {
         window.scrollBy(0, 1);
         window.scrollBy(0, -1);
       }
@@ -44,7 +44,7 @@ const observer = new MutationObserver((mutations) => {
       console.error(e);
     }
   }
-  if (twitterMute.mute_level_hard) {
+  if (settings.mute_level_hard) {
     setTimeout(() => {
       try {
         [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
