@@ -37,7 +37,8 @@ let twitterMute = {
   oricon: false,
   trend_covid19: false,
   news_mynavi_jp: false,
-  bizble_asahi: false
+  bizble_asahi: false,
+  mode_overseas: false
 };
 const filterFunc = (e) => {
   var result = false;
@@ -156,7 +157,7 @@ const filterFunc = (e) => {
 }
 const observer = new MutationObserver((mutations) => {
   muteCounter++;
-  if (muteCounter % 10 !== 0) {
+  if (muteCounter % 3 !== 0) {
     return;
   }
   try {
@@ -172,6 +173,22 @@ const observer = new MutationObserver((mutations) => {
     }
   } catch (e) {
     console.error(e);
+  }
+  if (twitterMute.mode_overseas) {
+    try {
+      [...document.querySelectorAll('section[aria-labelledby|="accessible-list"] > div > div > div[class]')]
+        .filter(filterFunc)
+        .forEach((e) => e.style.display = 'none');
+      [...document.querySelectorAll('div > div:nth-child(2) > div > div > section[aria-labelledby^="accessible-list"] > div > div > div')]
+        .filter(filterFunc)
+        .forEach((e) => e.style.display = 'none');
+      if (twitterMute.auto_scroll_by_1) {
+        window.scrollBy(0, 1);
+        window.scrollBy(0, -1);
+      }
+    } catch (e) {
+      console.error(e);
+    }
   }
   if (twitterMute.mute_level_hard) {
     setTimeout(() => {
@@ -234,7 +251,8 @@ chrome.storage.sync.get({
   trend_covid19: false,
   news_mynavi_jp: false,
   mimollet2015: false,
-  bizble_asahi: false
+  bizble_asahi: false,
+  mode_overseas: false
 }, (items) => {
   twitterMute.buzzfeed = items.buzzfeed;
   twitterMute.huffpost = items.huffpost;
@@ -275,5 +293,6 @@ chrome.storage.sync.get({
   twitterMute.news_mynavi_jp = items.news_mynavi_jp;
   twitterMute.mimollet2015 = items.mimollet2015;
   twitterMute.bizble_asahi = items.bizble_asahi;
+  twitterMute.mode_overseas = items.mode_overseas;
 });
 
