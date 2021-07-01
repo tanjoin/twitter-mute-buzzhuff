@@ -327,7 +327,14 @@ const MUTE_LIST = [
     "name": "BuzzFeed",
     "section": 1,
     "mute_word": ["BuzzFeed", "バズフィード"]
-  }
+  },
+  {
+    "id": "mode_overseas",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  },
 ];
 
 function generateCheckboxes(data) {

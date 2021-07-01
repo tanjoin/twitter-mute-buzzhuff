@@ -10,7 +10,7 @@ const filterFunc = (e) => {
 }
 const observer = new MutationObserver((mutations) => {
   muteCounter++;
-  if (muteCounter % 10 !== 0) {
+  if (muteCounter % 3 !== 0) {
     return;
   }
   console.log(settings);
@@ -28,7 +28,23 @@ const observer = new MutationObserver((mutations) => {
   } catch (e) {
     console.error(e);
   }
-  if (settings.mute_level_hard) {
+  if (twitterMute.mode_overseas) {
+    try {
+      [...document.querySelectorAll('section[aria-labelledby|="accessible-list"] > div > div > div[class]')]
+        .filter(filterFunc)
+        .forEach((e) => e.style.display = 'none');
+      [...document.querySelectorAll('div > div:nth-child(2) > div > div > section[aria-labelledby^="accessible-list"] > div > div > div')]
+        .filter(filterFunc)
+        .forEach((e) => e.style.display = 'none');
+      if (twitterMute.auto_scroll_by_1) {
+        window.scrollBy(0, 1);
+        window.scrollBy(0, -1);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  if (twitterMute.mute_level_hard) {
     setTimeout(() => {
       try {
         [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
@@ -53,5 +69,6 @@ observer.observe(document.body, config);
 chrome.storage.sync.get({
   mute_list: ["BuzzFeed", "バズフィード", "ハフポスト"],
   auto_scroll_by_1: false,
-  mute_level_hard: false
+  mute_level_hard: false,
+  mode_overseas: false
 }, (data) => settings = Object.assign(settings, data));
