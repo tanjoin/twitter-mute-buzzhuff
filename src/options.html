@@ -31,7 +31,7 @@
           <small id="mode_overseas_help" class="form-text text-muted">言語設定を海外にしている場合はこちらのチェックを有効にしてください</small>
         </div>
       </div>
-      <h1>描画補助</h1>
+      <h2>描画補助</h2>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" name="auto_scroll_by_1" id="auto_scroll_by_1">
         <label class="form-check-label" for="auto_scroll_by_1" aria-describedby="auto_scroll_by_1_help">
@@ -39,6 +39,15 @@
         </label>
         <div>
           <small id="auto_scroll_by_1_help" class="form-text text-muted">処理後にホワイトアウトするのを軽減するため、1ピクセルだけスクロールする処理（window.scrollBy(0, 1)）を行います</small>
+        </div>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="move_hard_translate_y" id="move_hard_translate_y">
+        <label class="form-check-label" for="move_hard_translate_y" aria-describedby="move_hard_translate_y_help">
+          無理やり空白を消す処理
+        </label>
+        <div>
+          <small id="move_hard_translate_y_help" class="form-text text-muted">非表示処理を2回適用するので画面がチラつく可能性があります</small>
         </div>
       </div>
       <h2>フリーワード</h2>

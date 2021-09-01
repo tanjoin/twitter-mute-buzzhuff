@@ -335,6 +335,20 @@ const MUTE_LIST = [
     "section": 4,
     "mute_word": []
   },
+  {
+    "id": "move_hard_translate_y_help",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  },
+  {
+    "id": "apply_new_mute_list",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  }
 ];
 
 function generateCheckboxes(data) {
@@ -371,7 +385,7 @@ function saveOptions() {
       }
     }
     return result;
-  }, { mute_list: [] });
+  }, { mute_list: [], apply_new_mute_list: true });
 
   let freeword = document.getElementById('freeword_area').value;
   if (freeword && freeword.length > 0) {
