@@ -336,7 +336,7 @@ const MUTE_LIST = [
     "mute_word": []
   },
   {
-    "id": "move_hard_translate_y_help",
+    "id": "move_hard_translate_y",
     "default_value": false,
     "name": "",
     "section": 4,
