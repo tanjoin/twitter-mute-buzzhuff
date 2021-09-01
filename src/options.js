@@ -1,46 +1,401 @@
+const MUTE_LIST = [
+  {
+    "id": "itm_nlab",
+    "default_value": false,
+    "name": "ねとらぼ",
+    "section": 1,
+    "mute_word": ["ねとらぼ"]
+  },
+  {
+    "id": "ABEMATIMES",
+    "default_value": false,
+    "name": "ABEMA TIMES",
+    "section": 1,
+    "mute_word": ["ABEMA TIMES"]
+  },
+  {
+    "id": "kyodo_official",
+    "default_value": false,
+    "name": "共同通信公式",
+    "section": 1,
+    "mute_word": ["共同通信"]
+  },
+  {
+    "id" : "Newsweek_JAPAN",
+    "default_value": false,
+    "name" : "ニューズウィーク日本版",
+    "section": 1,
+    "mute_word": ["ニューズウィーク"]
+  },
+  {
+    "id": "WomanExcite",
+    "default_value": false,
+    "name": "ウーマンエキサイト編集部",
+    "section": 1,
+    "mute_word": ["ウーマンエキサイト編集部"]
+  },
+  {
+    "id": "iVoCE",
+    "default_value": false,
+    "name" : "iVoCE",
+    "section": 1,
+    "mute_word": ["VOCE", "ヴォーチェ"]
+  },
+  {
+    "id": "Kstyle_news",
+    "default_value": false,
+    "name": "Kstyle",
+    "section": 1,
+    "mute_word": ["Kstyle"]
+  },
+  {
+    "id": "cosmopolitanjp",
+    "default_value": false,
+    "name": "Cosmopolitan／コスモポリタン",
+    "section": 1,
+    "mute_word": ["Cosmopolitan", "コスモポリタン"]
+  },
+  {
+    "id": "bizble_asahi",
+    "default_value": false,
+    "name": "bizble（ビズブル）",
+    "section": 1,
+    "mute_word": ["bizble", "ビズブル"]
+  },
+  {
+    "id": "mimollet2015",
+    "default_value": false,
+    "name": "mi-mollet/ミモレ",
+    "section": 1,
+    "mute_word": ["mi-mollet", "ミモレ"]
+  },
+  {
+    "id": "news_mynavi_jp",
+    "default_value": false,
+    "name": "マイナビニュース",
+    "section": 1,
+    "mute_word": ["マイナビニュース"]
+  },
+  {
+    "id": "trend_covid19",
+    "default_value": false,
+    "name": "COVID-19",
+    "section": 2,
+    "mute_word": ["COVID-19"]
+  },
+  {
+    "id": "oricon",
+    "default_value": false,
+    "name": "ORICON NEWS（オリコンニュース）",
+    "section": 1,
+    "mute_word": ["ORICON NEWS"]
+  },
+  {
+    "id": "modelpress",
+    "default_value": false,
+    "name": "モデルプレス",
+    "section": 1,
+    "mute_word": ["モデルプレス"]
+  },
+  {
+    "id": "ld_blogos",
+    "default_value": false,
+    "name": "BLOGOS",
+    "section": 1,
+    "mute_word": ["BLOGOS"]
+  },
+  {
+    "id": "japanacademy",
+    "default_value": false,
+    "name": "日本アカデミー賞協会",
+    "section": 1,
+    "mute_word": ["日本アカデミー賞協会"]
+  },
+  {
+    "id": "ntvnewszero",
+    "default_value": false,
+    "name": "news zero",
+    "section": 1,
+    "mute_word": ["news zero"]
+  },
+  {
+    "id": "mamadaystv",
+    "default_value": false,
+    "name": "MAMADAYS｜ママデイズ",
+    "section": 1,
+    "mute_word": ["MAMADAYS", "ママデイズ"]
+  },
+  {
+    "id": "BIJapan",
+    "default_value": false,
+    "name": "Business Insider Japan",
+    "section": 1,
+    "mute_word": ["Business Insider Japan"]
+  },
+  {
+    "id": "GINZA_magazine",
+    "default_value": false,
+    "name": "GINZA",
+    "section": 1,
+    "mute_word": ["GINZA"]
+  },
+  {
+    "id": "auto_scroll_by_1",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  },
+  {
+    "id": "word_birthday",
+    "default_value": false,
+    "name": "誕生日",
+    "section": 3,
+    "mute_word": ["誕生日"]
+  },
+  {
+    "id": "mute_level_hard",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  },
+  {
+    "id": "sankeibiz",
+    "default_value": false,
+    "name": "SankeiBiz",
+    "section": 1,
+    "mute_word": ["SankeiBiz"]
+  },
+  {
+    "id": "nhk_news",
+    "default_value": false,
+    "name": "NHKニュース",
+    "section": 1,
+    "mute_word": ["NHKニュース", "NHK NEWS"]
+  },
+  {
+    "id": "word_china",
+    "default_value": false,
+    "name": "中国",
+    "section": 3,
+    "mute_word": ["中国"]
+  },
+  {
+    "id": "word_korea",
+    "default_value": false,
+    "name": "韓国",
+    "section": 3,
+    "mute_word": ["韓国"]
+  },
+  {
+    "id": "tastyjapan",
+    "default_value": false,
+    "name": "Tasty Japan",
+    "section": 1,
+    "mute_word": ["Tasty Japan"]
+  },
+  {
+    "id": "frau_tw",
+    "default_value": false,
+    "name": "FRaU（フラウ）",
+    "section": 1,
+    "mute_word": ["FRaU"]
+  },
+  {
+    "id": "gekisaka",
+    "default_value": false,
+    "name": "ゲキサカ",
+    "section": 1,
+    "mute_word": ["ゲキサカ"]
+  },
+  {
+    "id": "gendai_biz",
+    "default_value": false,
+    "name": "現代ビジネス",
+    "section": 1,
+    "mute_word": ["現代ビジネス"]
+  },
+  {
+    "id": "word_BTS",
+    "default_value": false,
+    "name": "BTS",
+    "section": 3,
+    "mute_word": ["BTS"]
+  },
+  {
+    "id": "shin_R25",
+    "default_value": false,
+    "name": "新R25編集部",
+    "section": 1,
+    "mute_word": ["新R25編集部"]
+  },
+  {
+    "id": "crea_web",
+    "default_value": false,
+    "name": "CREA",
+    "section": 1,
+    "mute_word": ["CREA"]
+  },
+  {
+    "id": "hst_tvasahi",
+    "default_value": false,
+    "name": "報道ステーション＋土日ステ",
+    "section": 1,
+    "mute_word": ["報道ステーション"]
+  },
+  {
+    "id": "news24ntv",
+    "default_value": false,
+    "name": "日テレNEWS / 日本テレビのニュース・速報",
+    "section": 1,
+    "mute_word": ["日テレNEWS"]
+  },
+  {
+    "id": "jijicom",
+    "default_value": false,
+    "name": "時事ドットコム（時事通信ニュース）",
+    "section": 1,
+    "mute_word": ["時事ドットコム"]
+  },
+  {
+    "id": "trend_kpop",
+    "default_value": false,
+    "name": "K-POP",
+    "section": 2,
+    "mute_word": ["K-POP · トレンド"]
+  },
+  {
+    "id": "trend_seiji",
+    "default_value": false,
+    "name": "政治",
+    "section": 2,
+    "mute_word": ["政治 · トレンド"]
+  },
+  {
+    "id": "jijimedical",
+    "default_value": false,
+    "name": "時事メディカル",
+    "section": 1,
+    "mute_word": ["時事メディカル"]
+  },
+  {
+    "id": "numberweb",
+    "default_value": false,
+    "name": "Number編集部",
+    "section": 1,
+    "mute_word": ["Number編集部"]
+  },
+  {
+    "id": "asahicom",
+    "default_value": false,
+    "name": "朝日新聞",
+    "section": 1,
+    "mute_word": ["朝日新聞", "AREA"]
+  },
+  {
+    "id": "toyokeizai",
+    "default_value": false,
+    "name": "東洋経済",
+    "section": 1,
+    "mute_word": ["東洋経済"]
+  },
+  {
+    "id": "fnn",
+    "default_value": false,
+    "name": "FNN",
+    "section": 1,
+    "mute_word": ["FNN"]
+  },
+  {
+    "id": "bunshun",
+    "default_value": false,
+    "name": "文春",
+    "section": 1,
+    "mute_word": ["文春"]
+  },
+  {
+    "id": "huffpost",
+    "default_value": true,
+    "name": "ハフポスト",
+    "section": 1,
+    "mute_word": ["ハフポスト"]
+  },
+  {
+    "id": "buzzfeed",
+    "default_value": true,
+    "name": "BuzzFeed",
+    "section": 1,
+    "mute_word": ["BuzzFeed", "バズフィード"]
+  },
+  {
+    "id": "mode_overseas",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  },
+  {
+    "id": "move_hard_translate_y",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  },
+  {
+    "id": "apply_new_mute_list",
+    "default_value": false,
+    "name": "",
+    "section": 4,
+    "mute_word": []
+  }
+];
+
+function generateCheckboxes(data) {
+  var formCheck = document.createElement('div');
+  formCheck.classList.add('form-check');
+  var input = document.createElement('input');
+  input.classList.add('form-check-input');
+  input.type = "checkbox";
+  input.name = data.id;
+  input.id = data.id;
+  formCheck.appendChild(input);
+  var label = document.createElement('label');
+  label.classList.add('form-check-label');
+  label.for = data.id;
+  label.textContent = data.name;
+  formCheck.appendChild(label);
+
+  if (data.section === 1) {
+    document.getElementById('section1').insertAdjacentElement('afterend', formCheck);
+  } else if (data.section === 2) {
+    document.getElementById('section2').insertAdjacentElement('afterend', formCheck);
+  } else if (data.section === 3) {
+    document.getElementById('section3').insertAdjacentElement('afterend', formCheck);
+  }
+}
+
 function saveOptions() {
-  chrome.storage.sync.set({
-    buzzfeed: document.getElementById('buzzfeed').checked,
-    huffpost: document.getElementById('huffpost').checked,
-    bunshun: document.getElementById('bunshun').checked,
-    fnn: document.getElementById('fnn').checked,
-    toyokeizai: document.getElementById('toyokeizai').checked,
-    asahicom: document.getElementById('asahicom').checked,
-    numberweb: document.getElementById('numberweb').checked,
-    jijimedical: document.getElementById('jijimedical').checked,
-    trend_seiji: document.getElementById('trend_seiji').checked,
-    trend_kpop: document.getElementById('trend_kpop').checked,
-    jijicom: document.getElementById('jijicom').checked,
-    news24ntv: document.getElementById('news24ntv').checked,
-    hst_tvasahi: document.getElementById('hst_tvasahi').checked,
-    crea_web: document.getElementById('crea_web').checked,
-    shin_R25: document.getElementById('shin_R25').checked,
-    word_BTS: document.getElementById('word_BTS').checked,
-    gendai_biz: document.getElementById('gendai_biz').checked,
-    gekisaka: document.getElementById('gekisaka').checked,
-    frau_tw: document.getElementById('frau_tw').checked,
-    tastyjapan: document.getElementById('tastyjapan').checked,
-    word_korea: document.getElementById('word_korea').checked,
-    word_china: document.getElementById('word_china').checked,
-    nhk_news: document.getElementById('nhk_news').checked,
-    sankeibiz: document.getElementById('sankeibiz').checked,
-    mute_level_hard: document.getElementById('mute_level_hard').checked,
-    word_birthday: document.getElementById('word_birthday').checked,
-    auto_scroll_by_1: document.getElementById('auto_scroll_by_1').checked,
-    GINZA_magazine: document.getElementById('GINZA_magazine').checked,
-    BIJapan: document.getElementById('BIJapan').checked,
-    mamadaystv: document.getElementById('mamadaystv').checked,
-    ntvnewszero: document.getElementById('ntvnewszero').checked,
-    japanacademy: document.getElementById('japanacademy').checked,
-    ld_blogos: document.getElementById('ld_blogos').checked,
-    modelpress: document.getElementById('modelpress').checked,
-    oricon: document.getElementById('oricon').checked,
-    trend_covid19: document.getElementById('trend_covid19').checked,
-    news_mynavi_jp: document.getElementById('news_mynavi_jp').checked,
-    mimollet2015: document.getElementById('mimollet2015').checked,
-    bizble_asahi: document.getElementById('bizble_asahi').checked,
-    mode_overseas: document.getElementById('mode_overseas').checked
-  }, () => {
+  const syncData = MUTE_LIST.reduce((result, current) => {
+    let checkbox = document.getElementById(current.id);
+    if (checkbox) {
+      result[current.id] = checkbox.checked;
+      if (checkbox.checked) {
+        result.mute_list = result.mute_list.concat(current.mute_word);
+      }
+    }
+    return result;
+  }, { mute_list: [], apply_new_mute_list: true });
+
+  let freeword = document.getElementById('freeword_area').value;
+  if (freeword && freeword.length > 0) {
+    syncData.freeword = freeword.split('\n');
+    syncData.mute_list = syncData.mute_list.concat(syncData.freeword);
+  } else {
+    syncData.freeword = [];
+  }
+
+  chrome.storage.sync.set(syncData, () => {
     const status = document.getElementById('status');
     status.textContent = '保存しました！';
     setTimeout(() => {
@@ -50,88 +405,25 @@ function saveOptions() {
 }
 
 function restoreOptions() {
-  chrome.storage.sync.get({
-    buzzfeed: true,
-    huffpost: true,
-    bunshun: false,
-    fnn: false,
-    toyokeizai: false,
-    asahicom: false,
-    numberweb: false,
-    jijimedical: false,
-    trend_seiji: false,
-    trend_kpop: false,
-    jijicom: false,
-    news24ntv: false,
-    hst_tvasahi: false,
-    crea_web: false,
-    shin_R25: false,
-    word_BTS: false,
-    gendai_biz: false,
-    gekisaka: false,
-    frau_tw: false,
-    tastyjapan: false,
-    word_korea: false,
-    word_china: false,
-    nhk_news: false,
-    sankeibiz: false,
-    mute_level_hard: false,
-    word_birthday: false,
-    auto_scroll_by_1: false,
-    GINZA_magazine: false,
-    BIJapan: false,
-    mamadaystv: false,
-    ntvnewszero: false,
-    japanacademy: false,
-    ld_blogos: false,
-    modelpress: false,
-    oricon: false,
-    trend_covid19: false,
-    news_mynavi_jp: false,
-    mimollet2015: false,
-    bizble_asahi: false,
-    mode_overseas: false
-  }, (items) => {
-    document.getElementById('buzzfeed').checked = items.buzzfeed;
-    document.getElementById('huffpost').checked = items.huffpost;
-    document.getElementById('bunshun').checked = items.bunshun;
-    document.getElementById('fnn').checked = items.fnn;
-    document.getElementById('toyokeizai').checked = items.toyokeizai;
-    document.getElementById('asahicom').checked = items.asahicom;
-    document.getElementById('numberweb').checked = items.numberweb;
-    document.getElementById('jijimedical').checked = items.jijimedical;
-    document.getElementById('trend_seiji').checked = items.trend_seiji;
-    document.getElementById('trend_kpop').checked = items.trend_kpop;
-    document.getElementById('jijicom').checked = items.jijicom;
-    document.getElementById('news24ntv').checked = items.news24ntv;
-    document.getElementById('hst_tvasahi').checked = items.hst_tvasahi;
-    document.getElementById('crea_web').checked = items.crea_web;
-    document.getElementById('shin_R25').checked = items.shin_R25;
-    document.getElementById('word_BTS').checked = items.word_BTS;
-    document.getElementById('gendai_biz').checked = items.gendai_biz;
-    document.getElementById('gekisaka').checked = items.gekisaka;
-    document.getElementById('frau_tw').checked = items.frau_tw;
-    document.getElementById('tastyjapan').checked = items.tastyjapan;
-    document.getElementById('word_korea').checked = items.word_korea;
-    document.getElementById('word_china').checked = items.word_china;
-    document.getElementById('nhk_news').checked = items.nhk_news;
-    document.getElementById('sankeibiz').checked = items.sankeibiz;
-    document.getElementById('mute_level_hard').checked = items.mute_level_hard;
-    document.getElementById('word_birthday').checked = items.word_birthday;
-    document.getElementById('auto_scroll_by_1').checked = items.auto_scroll_by_1;
-    document.getElementById('GINZA_magazine').checked = items.GINZA_magazine;
-    document.getElementById('BIJapan').checked = items.BIJapan;
-    document.getElementById('mamadaystv').checked = items.mamadaystv;
-    document.getElementById('ntvnewszero').checked = items.ntvnewszero;
-    document.getElementById('japanacademy').checked = items.japanacademy;
-    document.getElementById('ld_blogos').checked = items.ld_blogos;
-    document.getElementById('modelpress').checked = items.modelpress;
-    document.getElementById('oricon').checked = items.oricon;
-    document.getElementById('trend_covid19').checked = items.trend_covid19;
-    document.getElementById('news_mynavi_jp').checked = items.news_mynavi_jp;
-    document.getElementById('mimollet2015').checked = items.mimollet2015;
-    document.getElementById('bizble_asahi').checked = items.bizble_asahi;
-    document.getElementById('mode_overseas').checked = items.mode_overseas;
+  MUTE_LIST.forEach((data) => {
+    generateCheckboxes(data);
+  });
+  var defaultValues = MUTE_LIST.reduce((result, current) => {
+    result[current.id] = current.default_value;
+    return result;
+  }, { freeword: [] });
+  chrome.storage.sync.get(defaultValues, (data) => {
+    MUTE_LIST.forEach((current) => {
+      let checkbox = document.getElementById(current.id);
+      if (checkbox) {
+        checkbox.checked = data[current.id];
+      }
+    });
+    
+    let freeword = document.getElementById('freeword_area');
+    if (freeword) {
+      freeword.value = data.freeword.join('\n');
+    }
   });
 }
 
