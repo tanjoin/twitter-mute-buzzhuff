@@ -12,23 +12,14 @@
       <h1 id="section2">トレンド</h1>
       <h1 id="section3">キーワード（試用）</h1>
       <h1 id="section4">設定</h1>
-      <h2>ミュート強度</h2>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="mute_level_hard" id="mute_level_hard">
-        <label class="form-check-label" for="mute_level_hard" aria-describedby="mute_level_hard_help">
-          しっかりミュート
-        </label>
-        <div>
-          <small id="mute_level_hard_help" class="form-text text-muted">引用記事の場合はミュート漏れが発生するので、2重に処理してミュート漏れをふせぐ機能</small>
-        </div>
-      </div>
+      <h2>言語</h2>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" name="mode_overseas" id="mode_overseas">
         <label class="form-check-label" for="mode_overseas" aria-describedby="mode_overseas_help">
           海外言語対応
         </label>
         <div>
-          <small id="mode_overseas_help" class="form-text text-muted">言語設定を海外にしている場合はこちらのチェックを有効にしてください</small>
+          <small id="mode_overseas_help" class="form-text text-muted">言語設定を海外にしている場合はこちらのチェックを有効にしてください（検索結果等にも影響があるため日本語の方は非推奨）</small>
         </div>
       </div>
       <h2>描画補助</h2>
@@ -39,15 +30,6 @@
         </label>
         <div>
           <small id="auto_scroll_by_1_help" class="form-text text-muted">処理後にホワイトアウトするのを軽減するため、1ピクセルだけスクロールする処理（window.scrollBy(0, 1)）を行います</small>
-        </div>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="move_hard_translate_y" id="move_hard_translate_y">
-        <label class="form-check-label" for="move_hard_translate_y" aria-describedby="move_hard_translate_y_help">
-          無理やり空白を消す処理
-        </label>
-        <div>
-          <small id="move_hard_translate_y_help" class="form-text text-muted">非表示処理を2回適用するので画面がチラつく可能性があります</small>
         </div>
       </div>
       <h2>フリーワード</h2>

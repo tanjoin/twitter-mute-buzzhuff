@@ -110,11 +110,6 @@ const MUTE_LIST = [
     "mute_word": ["誕生日"]
   },
   {
-    "id": "mute_level_hard",
-    "default_value": false,
-    "mute_word": []
-  },
-  {
     "id": "sankeibiz",
     "default_value": false,
     "mute_word": ["SankeiBiz"]
@@ -240,11 +235,6 @@ const MUTE_LIST = [
     "mute_word": []
   },
   {
-    "id": "move_hard_translate_y",
-    "default_value": false,
-    "mute_word": []
-  },
-  {
     "id": "apply_new_mute_list",
     "default_value": false,
     "mute_word": []
@@ -263,10 +253,6 @@ const filterFunc = (e) => {
 }
 const observer = new MutationObserver((mutations) => {
   muteCounter++;
-  if (muteCounter % 3 !== 0) {
-    return;
-  }
-  console.log(settings);
   try {
     [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
       .filter(filterFunc)
@@ -274,20 +260,6 @@ const observer = new MutationObserver((mutations) => {
     [...document.querySelectorAll('div[aria-label="タイムライン: 話題を検索"] > div > div')]
       .filter(filterFunc)
       .forEach((e) => e.style.display = 'none');
-
-    if (settings.move_hard_translate_y) {
-      [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
-        .filter(filterFunc)
-        .forEach((e) => e.style.display = undefined);
-      [...document.querySelectorAll('div[aria-label="タイムライン: 話題を検索"] > div > div')]
-        .filter(filterFunc)
-        .forEach((e) => e.style.display = undefined);
-      [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
-        .filter(filterFunc)
-        .forEach((e) => e.style.display = 'none');
-      [...document.querySelectorAll('div[aria-label="タイムライン: 話題を検索"] > div > div')]
-        .filter(filterFunc)
-        .forEach((e) => e.style.display = 'none');    }
     if (settings.auto_scroll_by_1) {
       window.scrollBy(0, 1);
       window.scrollBy(0, -1);
@@ -311,24 +283,6 @@ const observer = new MutationObserver((mutations) => {
       console.error(e);
     }
   }
-  if (settings.mute_level_hard) {
-    setTimeout(() => {
-      try {
-        [...document.querySelectorAll('div[aria-label="タイムライン: トレンド"] > div > div')]
-          .filter(filterFunc)
-          .forEach((e) => e.style.display = 'none');
-        [...document.querySelectorAll('div[aria-label="タイムライン: 話題を検索"] > div > div')]
-          .filter(filterFunc)
-          .forEach((e) => e.style.display = 'none');
-        if (settings.auto_scroll_by_1) {
-          window.scrollBy(0, 1);
-          window.scrollBy(0, -1);
-        }
-      } catch (e) {
-        console.error(e);
-      }
-    }, 1000);
-  }
 });
 const config = { attributes: false, childList: true, characterData: false, subtree: true };
 observer.observe(document.body, config);
@@ -336,9 +290,7 @@ observer.observe(document.body, config);
 chrome.storage.sync.get(Object.assign({
   mute_list: ["BuzzFeed", "バズフィード", "ハフポスト"],
   auto_scroll_by_1: false,
-  mute_level_hard: false,
   mode_overseas: false,
-  move_hard_translate_y: false,
   apply_new_mute_list: false
 }, MUTE_LIST.reduce((a, c) => {
   a[c.id] = c.default_value;
@@ -354,9 +306,7 @@ chrome.storage.sync.get(Object.assign({
     settings.mute_list = mute_list;
     // options
     settings.auto_scroll_by_1 = data.auto_scroll_by_1;
-    settings.mute_level_hard = data.mute_level_hard;
     settings.mode_overseas = data.mode_overseas;
-    settings.move_hard_translate_y = data.move_hard_translate_y;
     settings.apply_new_mute_list = data.apply_new_mute_list;
   } else {
     settings = Object.assign(settings, data);

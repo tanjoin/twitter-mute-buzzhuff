@@ -154,13 +154,6 @@ const MUTE_LIST = [
     "mute_word": ["誕生日"]
   },
   {
-    "id": "mute_level_hard",
-    "default_value": false,
-    "name": "",
-    "section": 4,
-    "mute_word": []
-  },
-  {
     "id": "sankeibiz",
     "default_value": false,
     "name": "SankeiBiz",
@@ -330,13 +323,6 @@ const MUTE_LIST = [
   },
   {
     "id": "mode_overseas",
-    "default_value": false,
-    "name": "",
-    "section": 4,
-    "mute_word": []
-  },
-  {
-    "id": "move_hard_translate_y",
     "default_value": false,
     "name": "",
     "section": 4,
