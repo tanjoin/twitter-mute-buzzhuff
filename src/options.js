@@ -1,5 +1,47 @@
 const MUTE_LIST = [
   {
+    "id": "natalie",
+    "default_value": false,
+    "name": "ナタリー",
+    "section": 1,
+    "mute_word": ["ナタリー"]
+  },
+  {
+    "id": "DIGIDAYJAPAN",
+    "default_value": false,
+    "name": "DIGIDAY［日本版］",
+    "section": 1,
+    "mute_word": ["DIGIDAY"]
+  },
+  {
+    "id": "bengo4topics",
+    "default_value": false,
+    "name": "弁護士ドットコムニュース",
+    "section": 1,
+    "mute_word": ["弁護士ドットコムニュース"]
+  },
+  {
+    "id": "dol_editors",
+    "default_value": false,
+    "name": "ダイヤモンド・オンライン",
+    "section": 1,
+    "mute_word": ["ダイヤモンド・オンライン"]
+  },
+  {
+    "id": "weekly_SPA",
+    "default_value": false,
+    "name": "週刊SPA!・日刊SPA!",
+    "section": 1,
+    "mute_word": ["SPA!"]
+  },
+  {
+    "id": "asahi_globe",
+    "default_value": false,
+    "name": "The Asahi Shimbun GLOBE+",
+    "section": 1,
+    "mute_word": ["The Asahi Shimbun GLOBE+"]
+  },
+  {
     "id": "itm_nlab",
     "default_value": false,
     "name": "ねとらぼ",
@@ -413,14 +455,28 @@ function restoreOptions() {
   });
 }
 
+function flexibleTextarea(e) {
+  console.log('OK');
+  [...document.querySelectorAll('.flexible')].forEach((textarea) => {
+    textarea.setAttribute('default_height', textarea.clientHeight);
+    textarea.addEventListener('input', (e) => {
+      textarea.style.height = textarea.getAttribute('default_height') + 'px';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    });
+  });
+}
+
 function addAllCheck() {
-  [...document.querySelectorAll('input[type="checkbox"]')].forEach((e) => e.checked = true);
+  [...document.querySelectorAll('input[type="checkbox"]')]
+    .filter((e) => e.id !== "mode_overseas")
+    .forEach((e) => e.checked = true);
 }
 
 function removeAllCheck() {
   [...document.querySelectorAll('input[type="checkbox"]')].forEach((e) => e.checked = false);
 }
 
+window.addEventListener('load', flexibleTextarea);
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click', saveOptions);
 document.getElementById('add_all_check').addEventListener('click', addAllCheck);
