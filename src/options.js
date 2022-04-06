@@ -1,5 +1,54 @@
 const MUTE_LIST = [
   {
+    "id": "tv_asahi_news",
+    "default_value": false,
+    "name": "テレ朝",
+    "section": 1,
+    "mute_word": ["テレ朝"]
+  },
+  {
+    "id": "feminism",
+    "default_value": false,
+    "name": "フェミニスト",
+    "section": 3,
+    "mute_word": ["性的搾取", "フェミニスト", "性的消費", "ツイフェミ"]
+  },
+  {
+    "id": "takapon_jp",
+    "default_value": false,
+    "name": "ホリエモン",
+    "section": 3,
+    "mute_word": ["ホリエモン", "堀江貴文", "堀江 貴文", "Takafumi Horie"]
+  },
+  {
+    "id": "hirox246",
+    "default_value": false,
+    "name": "ひろゆき",
+    "section": 3,
+    "mute_word": ["hirox246", "ひろゆき", "Hiroyuki Nishimura", "西村博之", "西村 博之"]
+  },
+  {
+    "id": "afpbbcom",
+    "default_value": false,
+    "name": "AFPBB",
+    "section": 1,
+    "mute_word": ["AFPBB"]
+  },
+  {
+    "id": "mainichijpnews",
+    "default_value": false,
+    "name": "毎日新聞",
+    "section": 1,
+    "mute_word": ["毎日新聞"]
+  },
+  {
+    "id": "tokyonewsroom",
+    "default_value": false,
+    "name": "東京新聞",
+    "section": 1,
+    "mute_word": ["東京新聞"]
+  },
+  {
     "id": "natalie",
     "default_value": false,
     "name": "ナタリー",

@@ -20,6 +20,14 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 4. 完了
 
 ## CHANGELOG
+### Ver. 0.6.0
+- manifest version を v3 に変更
+- add 東京新聞
+- add 毎日新聞
+- add AFPBB
+- add ひろゆき、ホリエモン（ニックネーム系）
+- add フェミニスト（性的〇〇）
+- add テレ朝
 ### Ver. 0.5.4
 - mobile.twitter.com に対応 [#7](https://github.com/tanjoin/twitter-mute-buzzhuff/issues/7)
 ### Ver. 0.5.3
