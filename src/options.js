@@ -1,5 +1,12 @@
 const MUTE_LIST = [
   {
+    "id": "itm_nlab_res",
+    "default_value": false,
+    "name": "ねとらぼ調査隊",
+    "section": 1,
+    "mute_word": ["ねとらぼ調査隊"]
+  },
+  {
     "id": "tv_asahi_news",
     "default_value": false,
     "name": "テレ朝",

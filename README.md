@@ -20,6 +20,8 @@ Twitterが優遇するクソメディアはどんどん非表示にする予定�
 4. 完了
 
 ## CHANGELOG
+### Ver. 0.6.1
+- add ねとらぼ調査隊
 ### Ver. 0.6.0
 - manifest version を v3 に変更
 - add 東京新聞
