@@ -9,8 +9,7 @@
     "16": "img/16.png"
   },
   "permissions": [
-    "storage",
-    "scripting"
+    "storage"
   ],
   "content_scripts": [
     {
