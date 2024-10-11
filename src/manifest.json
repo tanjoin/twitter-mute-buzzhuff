@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "twitter-mute-buzzfuff",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "description": "鬱陶しいメディアを目に入らなくする",
   "icons": {
     "128": "img/128.png",
@@ -15,7 +15,9 @@
     {
       "matches": [ 
         "*://twitter.com/*",
-        "*://*.twitter.com/*"
+        "*://*.twitter.com/*",
+        "*://*.x.com/*",
+        "*://x.com/*"
       ],
       "js": [ "main.js" ]
     }
